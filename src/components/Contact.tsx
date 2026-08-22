@@ -11,12 +11,9 @@ export function Contact() {
       <div className="relative mx-auto max-w-3xl px-6 text-center">
         <Reveal>
           <p className="font-mono-label text-xs uppercase text-accent">Get in touch</p>
-          <h2 className="font-display mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-            Let&apos;s build something.
-          </h2>
           <p className="mt-4 text-muted leading-relaxed">
-            I&apos;m currently looking for internships where I can grow my hands-on hardware and electronics
-            skills. If you&apos;re hiring — or just want to talk shop about a project — reach out.
+            I&apos;m searching for internships where I can grow my hands-on electronics skills. If
+            you&apos;re hiring or starting a project, please reach out.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
