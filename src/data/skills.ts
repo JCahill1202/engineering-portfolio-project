@@ -19,9 +19,9 @@ export const experience = [
     org: "Northeastern University",
     period: "January – June 2026",
     bullets: [
-      "Delivered lab instruction across multiple daily sections, reaching about 200 students per term, personalizing teaching strategies to individual students' needs",
-      "Diagnosed mislabeled capillary tubes and developed a modified measurement procedure — using pixel-based length comparison against authenticated pin gauges — that improved measurement accuracy for students",
-      "Designed and built an interactive LED tic-tac-toe game with joystick controls and a custom 3D-printed housing (SolidWorks/FreeCAD), debugging circuitry and firmware independently",
+      "Delivered lab instruction across multiple daily sections impacting 200 total students per term while personalizing teaching strategies to students' individual learning needs at a one-on-one level",
+      "Calibrated mislabeled capillary tubes via pixelated length comparison against authenticated pin gauges to develop a modified lab procedure improving measurement accuracy for students",
+      "Engineered an interactive LED tic-tac-toe game with joystick controls and custom 3D-printed housing designed in SolidWorks/FreeCAD, debugging circuitry and firmware independently",
     ],
   },
   {
@@ -29,10 +29,10 @@ export const experience = [
     org: "Gooch & Housego Optics",
     period: "June – August 2025",
     bullets: [
-      "Reorganized and catalogued 20 years of product order records",
-      "Reformatted the parts database and updated specifications for manufactured components",
-      "Assisted in integrating lenses with cameras for customer orders",
-      "Inspected and tested finished lenses for quality control",
+      "Improved organization and catalogued 20 years of product orders",
+      "Reformatted database and updated specifications of manufactured parts",
+      "Assisted in integrating lenses with cameras for customers",
+      "Inspected and tested lenses for quality control",
     ],
   },
   {
@@ -40,8 +40,8 @@ export const experience = [
     org: "Northeastern University",
     period: "Expected May 2028",
     bullets: [
-      "GPA 3.82, Dean's List",
-      "Relevant coursework: Advanced Physics Lab, Electronics, Electronics Lab, Electricity & Magnetism I, Foundations of Theoretical Physics, Modern Physics, Computational Problem Solving (Python), Differential Equations, Linear Algebra",
+      "Cumulative GPA: 3.822, Dean's List",
+      "Relevant Coursework: Advanced Physics Lab, Electronics, Electronics Lab, Electricity and Magnetism 1, Foundations of Theoretical Physics, Modern Physics, Computational Problem Solving (Python), Differential Equations, Linear Algebra",
     ],
   },
 ];

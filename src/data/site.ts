@@ -7,7 +7,7 @@ export const site = {
   location: "Boston, MA",
   school: "Northeastern University",
   degree: "B.S. Physics — Minor in Electrical Engineering & Mathematics",
-  gpa: "3.82",
+  gpa: "3.822",
   expectedGraduation: "May 2028",
   email: "cahill.jac@northeastern.edu",
   url: "https://example.com",
@@ -18,8 +18,8 @@ export const site = {
     email: "mailto:cahill.jac@northeastern.edu",
   },
   heroStats: [
-    { label: "GPA", value: "3.82" },
     { label: "Expected graduation", value: "2028" },
+    { label: "School", value: "Northeastern" },
     { label: "Focus", value: "Physics + EE" },
   ],
 };
