@@ -21,7 +21,7 @@ export async function generateMetadata({
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
   return {
-    title: `${project.title} — Project`,
+    title: `${project.title} | Project`,
     description: project.tagline,
   };
 }
@@ -59,7 +59,7 @@ export default async function ProjectPage({
 
               {project.isExample && (
                 <div className="mt-6 rounded-xl border border-accent-2/30 bg-accent-2/5 px-5 py-3 text-sm text-accent-2">
-                  This is an illustrative example project, not real work — it will be replaced with an actual
+                  This is an illustrative example project, not real work. It will be replaced with an actual
                   project.
                 </div>
               )}

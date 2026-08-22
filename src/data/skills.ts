@@ -37,7 +37,7 @@ export const experience = [
   },
   {
     role: "Physics Major, Minor in Electrical Engineering & Mathematics",
-    org: "Northeastern University — Expected Graduation May 2028",
+    org: "Northeastern University, Expected Graduation May 2028",
     period: "In Progress",
     bullets: [
       "Cumulative GPA: 3.822, Dean's List",

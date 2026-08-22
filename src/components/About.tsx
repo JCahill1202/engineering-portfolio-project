@@ -18,12 +18,12 @@ export function About() {
               </p>
               <p>
                 I&apos;ve also spent time in {site.school}&apos;s electronics and advanced physics labs, and
-                worked as a physics lab instructor and as an optical engineering intern — different flavors of
+                worked as a physics lab instructor and as an optical engineering intern. Different flavors of
                 the same instinct: measure carefully, understand why something doesn&apos;t work, and fix it.
               </p>
               <p>
-                I&apos;m looking for internships where I can keep building that hands-on engineering skill set —
-                reach out if that overlaps with what your team is doing.
+                I&apos;m looking for internships where I can keep building that hands-on engineering skill set.
+                Reach out if that overlaps with what your team is doing.
               </p>
             </div>
           </Reveal>

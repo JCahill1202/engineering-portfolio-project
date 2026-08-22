@@ -29,7 +29,7 @@ export type Project = {
   isExample?: boolean;
 };
 
-// Illustrative example projects only — these are not real work.
+// Illustrative example projects only. These are not real work.
 // Swap in real writeups, specs, and links, and drop `isExample` once you do.
 // Keep the shape the same and everything (grid + detail pages) updates automatically.
 export const projects: Project[] = [
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     featured: true,
     year: "2025",
     tools: ["KiCad", "STM32", "FOC", "LTspice", "Bench PSU / DSO"],
-    role: "Sole designer — schematic, PCB layout, firmware",
+    role: "Sole designer: schematic, PCB layout, firmware",
     summary:
       "A 4-layer motor controller board built around a field-oriented control (FOC) loop, capable of driving a 6.5 kW BLDC hub motor and recovering energy under braking back into the battery pack.",
     highlights: [
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     featured: true,
     year: "2024",
     tools: ["Verilog", "Vivado", "MATLAB", "I2S", "Artix-7"],
-    role: "Sole designer — RTL, verification, board bring-up",
+    role: "Sole designer: RTL, verification, board bring-up",
     summary:
       "A fully pipelined, fixed-point 5-band parametric equalizer running in real time on FPGA fabric, with live parameter control over SPI from a companion microcontroller.",
     highlights: [
@@ -131,7 +131,7 @@ export const projects: Project[] = [
     featured: false,
     year: "2023",
     tools: ["Arduino", "PID", "KiCad", "SolidWorks"],
-    role: "Sole designer — electronics, mechanical, controls",
+    role: "Sole designer: electronics, mechanical, controls",
     summary:
       "A competition line-following robot built around a custom 8-channel IR sensor bar and a tuned PID controller driving differential DC motors, refined over several design/test iterations.",
     highlights: [
@@ -156,9 +156,9 @@ export const projects: Project[] = [
     featured: true,
     year: "2026",
     tools: ["KiCad", "555 Timer IC", "Soldering"],
-    role: "Sole designer — schematic, PCB layout, prototype",
+    role: "Sole designer: schematic, PCB layout, prototype",
     summary:
-      "A pair of small 555 timer boards — one bistable, one astable — designed from schematic through PCB layout in KiCad. The bistable version uses two pushbuttons wired to the RST pin and the tied TRIG/THRES pins to manually latch an LED on and off, acting as a simple set-reset flip-flop.",
+      "A pair of small 555 timer boards, one bistable and one astable, designed from schematic through PCB layout in KiCad. The bistable version uses two pushbuttons wired to the RST pin and the tied TRIG/THRES pins to manually latch an LED on and off, acting as a simple set-reset flip-flop.",
     highlights: [
       "Designed the bistable 555 timer schematic in KiCad, using pin 4 (RST) and the tied THRES/TRIG inputs (pins 2 & 6) as manual reset and set pushbuttons to latch the LED on and off",
       "Laid out a 2-layer PCB in KiCad for the circuit and rendered a 3D preview of the board before fabrication",
@@ -180,7 +180,7 @@ export const projects: Project[] = [
       {
         name: "Bistable version",
         description:
-          "Two pushbuttons act as manual set/reset inputs — one latches the LED on, the other resets it off — using the 555's RST pin and tied TRIG/THRES pins instead of the usual RC timing network.",
+          "Two pushbuttons act as manual set/reset inputs: one latches the LED on, and the other resets it off, using the 555's RST pin and tied TRIG/THRES pins instead of the usual RC timing network.",
         images: [
           {
             src: "/projects/555-timer-led-pcbs/bistable-schematic.png",

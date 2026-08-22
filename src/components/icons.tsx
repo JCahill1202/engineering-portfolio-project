@@ -1,4 +1,4 @@
-// lucide-react no longer ships brand/logo icons — small inline SVGs for GitHub & LinkedIn.
+// lucide-react no longer ships brand/logo icons, so these are small inline SVGs for GitHub & LinkedIn.
 export function GithubIcon({ size = 20, className }: { size?: number; className?: string }) {
   return (
     <svg

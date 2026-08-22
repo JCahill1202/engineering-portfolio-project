@@ -9,12 +9,12 @@ export function Projects() {
         <SectionHeading
           kicker="Selected Work"
           title="Projects"
-          description="A mix of power electronics, embedded systems, digital design, and RF — each one built, tested, and documented end to end."
+          description="A mix of power electronics, embedded systems, digital design, and RF, each one built, tested, and documented end to end."
         />
         {projects.some((p) => p.isExample) && (
           <div className="mb-10 rounded-xl border border-accent-2/30 bg-accent-2/5 px-5 py-3 text-sm text-accent-2">
             Cards marked <span className="font-mono-label text-xs uppercase">Example</span> are illustrative
-            placeholders, not real projects — they&apos;ll be swapped for actual work soon.
+            placeholders, not real projects. They&apos;ll be swapped for actual work soon.
           </div>
         )}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

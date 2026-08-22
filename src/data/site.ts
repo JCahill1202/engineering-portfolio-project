@@ -1,9 +1,9 @@
-// Edit this file with your real info — it drives the hero, metadata, and contact section.
+// Edit this file with your real info. It drives the hero, metadata, and contact section.
 export const site = {
   name: "Jack Cahill",
   role: "Physics Major · Electrical Engineering Minor",
   tagline:
-    "I'm a physics major picking up an EE minor, and most of what I know about circuits and firmware comes from building things on my own — not classwork alone. I like taking a project from a schematic to a working prototype on the bench.",
+    "I'm a physics major picking up an EE minor, and most of what I know about circuits and firmware comes from building things on my own, not classwork alone. I like taking a project from a schematic to a working prototype on the bench.",
   location: "Boston, MA",
   school: "Northeastern University",
   degree: "B.S. Physics, Minor in EE & Math (in progress)",
