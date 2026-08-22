@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
@@ -95,12 +96,23 @@ export default async function ProjectPage({
 
         <section className="mx-auto max-w-4xl px-6 py-16">
           <div
-            className="mb-12 flex h-56 items-center justify-center overflow-hidden rounded-2xl border border-border"
+            className="relative mb-12 flex h-56 items-center justify-center overflow-hidden rounded-2xl border border-border sm:h-72"
             style={{ background: `linear-gradient(135deg, ${from}22, ${to}22)` }}
           >
-            <span className="font-display text-6xl font-semibold opacity-90" style={{ color: from }}>
-              {project.title.split(" ").slice(0, 2).map((w) => w[0]).join("")}
-            </span>
+            {project.coverImage ? (
+              <Image
+                src={project.coverImage.src}
+                alt={project.coverImage.alt}
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 896px, 100vw"
+                priority
+              />
+            ) : (
+              <span className="font-display text-6xl font-semibold opacity-90" style={{ color: from }}>
+                {project.title.split(" ").slice(0, 2).map((w) => w[0]).join("")}
+              </span>
+            )}
           </div>
 
           <div className="grid gap-12 md:grid-cols-3">
@@ -146,6 +158,37 @@ export default async function ProjectPage({
               </div>
             </Reveal>
           </div>
+
+          {project.variants && project.variants.length > 0 && (
+            <div className="mt-16 space-y-14">
+              {project.variants.map((variant) => (
+                <Reveal key={variant.name}>
+                  <h2 className="font-display text-xl font-semibold">{variant.name}</h2>
+                  <p className="mt-3 max-w-2xl text-muted leading-relaxed">{variant.description}</p>
+                  <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                    {variant.images.map((img) => (
+                      <div key={img.src} className="overflow-hidden rounded-2xl border border-border bg-bg-raised">
+                        <div className="relative aspect-[4/3] w-full">
+                          <Image
+                            src={img.src}
+                            alt={img.alt}
+                            fill
+                            className="object-contain p-3"
+                            sizes="(min-width: 768px) 440px, 100vw"
+                          />
+                        </div>
+                        {img.caption && (
+                          <p className="font-mono-label border-t border-border px-4 py-2.5 text-xs uppercase text-muted">
+                            {img.caption}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          )}
         </section>
 
         {otherProjects.length > 0 && (

@@ -1,3 +1,11 @@
+export type ProjectImage = { src: string; alt: string; caption?: string };
+
+export type ProjectVariant = {
+  name: string;
+  description: string;
+  images: ProjectImage[];
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -12,6 +20,10 @@ export type Project = {
   specs?: { label: string; value: string }[];
   links?: { label: string; href: string }[];
   coverGradient: [string, string];
+  // Real photo/screenshot used on the card + detail hero instead of the gradient placeholder.
+  coverImage?: ProjectImage;
+  // Sub-builds of the same project (e.g. astable vs. bistable versions), each with its own gallery.
+  variants?: ProjectVariant[];
   // Marks fictional placeholder projects so the UI can flag them clearly.
   // Remove this field (or set to false) once you swap in a real project.
   isExample?: boolean;
@@ -137,29 +149,62 @@ export const projects: Project[] = [
     isExample: true,
   },
   {
-    slug: "analog-overdrive-pedal",
-    title: "Discrete Analog Overdrive Pedal",
-    tagline: "Hand-tuned op-amp clipping stage with active tone shaping",
+    slug: "555-timer-led-pcbs",
+    title: "555 Timer Driven LED PCBs",
+    tagline: "Astable and bistable 555 timer circuits, each designed as a KiCad schematic and PCB",
     category: "Analog Design",
-    featured: false,
-    year: "2023",
-    tools: ["LTspice", "Eagle", "Bench multimeter/scope", "Op-amps"],
-    role: "Sole designer",
+    featured: true,
+    year: "2026",
+    tools: ["KiCad", "555 Timer IC", "Soldering"],
+    role: "Sole designer — schematic, PCB layout, prototype",
     summary:
-      "A guitar overdrive pedal built from discrete op-amp stages: a boosted input buffer, diode soft-clipping stage, and an active 2-band tone control, fully simulated before layout.",
+      "A pair of small 555 timer boards — one bistable, one astable — designed from schematic through PCB layout in KiCad. The bistable version uses two pushbuttons wired to the RST pin and the tied TRIG/THRES pins to manually latch an LED on and off, acting as a simple set-reset flip-flop.",
     highlights: [
-      "Simulated clipping and frequency response in LTspice before committing to a board layout",
-      "Hand-etched and populated two PCB revisions to fix a ground-loop hum discovered in bench testing",
-      "A/B tested against commercial pedals with the same op-amp topology for tonal reference",
+      "Designed the bistable 555 timer schematic in KiCad, using pin 4 (RST) and the tied THRES/TRIG inputs (pins 2 & 6) as manual reset and set pushbuttons to latch the LED on and off",
+      "Laid out a 2-layer PCB in KiCad for the circuit and rendered a 3D preview of the board before fabrication",
+      "Hand-soldered a dead-bug style prototype directly on the IC's leads to validate the design before committing to a board",
+      "Sized the pull-up resistors (R1/R2, 1 kΩ) and LED current-limiting resistor (R3, 330 Ω) for the +5 V supply",
     ],
     specs: [
-      { label: "Topology", value: "Op-amp soft clip" },
-      { label: "Supply", value: "9 V" },
-      { label: "Board revs", value: "2" },
+      { label: "Supply", value: "+5 V" },
+      { label: "Pull-up resistors", value: "1 kΩ (R1, R2)" },
+      { label: "LED resistor", value: "330 Ω (R3)" },
+      { label: "Decoupling cap", value: "0.1 µF" },
     ],
-    links: [{ label: "GitHub", href: "#" }],
     coverGradient: ["#f472b6", "#f5a524"],
-    isExample: true,
+    coverImage: {
+      src: "/projects/555-timer-led-pcbs/bistable-pcb-render.png",
+      alt: "3D render of the bistable 555 timer PCB",
+    },
+    variants: [
+      {
+        name: "Bistable version",
+        description:
+          "Two pushbuttons act as manual set/reset inputs — one latches the LED on, the other resets it off — using the 555's RST pin and tied TRIG/THRES pins instead of the usual RC timing network.",
+        images: [
+          {
+            src: "/projects/555-timer-led-pcbs/bistable-schematic.png",
+            alt: "Bistable 555 timer KiCad schematic",
+            caption: "KiCad schematic",
+          },
+          {
+            src: "/projects/555-timer-led-pcbs/bistable-pcb-layout.png",
+            alt: "Bistable 555 timer PCB layout in KiCad",
+            caption: "PCB layout",
+          },
+          {
+            src: "/projects/555-timer-led-pcbs/bistable-pcb-render.png",
+            alt: "3D render of the bistable 555 timer PCB",
+            caption: "3D board render",
+          },
+          {
+            src: "/projects/555-timer-led-pcbs/bistable-prototype.jpeg",
+            alt: "Hand-soldered dead-bug prototype of the bistable 555 timer circuit",
+            caption: "Hand-soldered prototype",
+          },
+        ],
+      },
+    ],
   },
   {
     slug: "rf-antenna-frontend",

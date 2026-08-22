@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/data/projects";
@@ -15,20 +16,32 @@ export function ProjectCard({ project, delay = 0 }: { project: Project; delay?: 
           className="relative mb-6 flex h-40 items-center justify-center overflow-hidden rounded-xl"
           style={{ background: `linear-gradient(135deg, ${from}22, ${to}22)` }}
         >
-          <div
-            className="absolute inset-0 opacity-40 bg-grid"
-            style={{ maskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent)" }}
-          />
-          <span
-            className="font-display text-4xl font-semibold opacity-90"
-            style={{ color: from }}
-          >
-            {project.title
-              .split(" ")
-              .slice(0, 2)
-              .map((w) => w[0])
-              .join("")}
-          </span>
+          {project.coverImage ? (
+            <Image
+              src={project.coverImage.src}
+              alt={project.coverImage.alt}
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            />
+          ) : (
+            <>
+              <div
+                className="absolute inset-0 opacity-40 bg-grid"
+                style={{ maskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent)" }}
+              />
+              <span
+                className="font-display text-4xl font-semibold opacity-90"
+                style={{ color: from }}
+              >
+                {project.title
+                  .split(" ")
+                  .slice(0, 2)
+                  .map((w) => w[0])
+                  .join("")}
+              </span>
+            </>
+          )}
           {project.isExample && (
             <span className="font-mono-label absolute right-3 top-3 rounded-full border border-accent-2/40 bg-bg/80 px-2 py-0.5 text-[10px] uppercase text-accent-2">
               Example
