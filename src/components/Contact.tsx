@@ -15,8 +15,8 @@ export function Contact() {
             Let&apos;s build something.
           </h2>
           <p className="mt-4 text-muted leading-relaxed">
-            I&apos;m currently looking for internship / new-grad roles in hardware, power electronics, or
-            embedded systems. If you&apos;re hiring — or just want to talk shop about a project — reach out.
+            I&apos;m currently looking for internships where I can grow my hands-on hardware and electronics
+            skills. If you&apos;re hiring — or just want to talk shop about a project — reach out.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a

@@ -56,6 +56,13 @@ export default async function ProjectPage({
                 Back to projects
               </Link>
 
+              {project.isExample && (
+                <div className="mt-6 rounded-xl border border-accent-2/30 bg-accent-2/5 px-5 py-3 text-sm text-accent-2">
+                  This is an illustrative example project, not real work — it will be replaced with an actual
+                  project.
+                </div>
+              )}
+
               <div className="mt-6 flex items-center gap-3">
                 <span className="font-mono-label text-xs uppercase text-accent">{project.category}</span>
                 <span className="h-1 w-1 rounded-full bg-border" />

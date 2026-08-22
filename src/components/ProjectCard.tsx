@@ -29,6 +29,11 @@ export function ProjectCard({ project, delay = 0 }: { project: Project; delay?: 
               .map((w) => w[0])
               .join("")}
           </span>
+          {project.isExample && (
+            <span className="font-mono-label absolute right-3 top-3 rounded-full border border-accent-2/40 bg-bg/80 px-2 py-0.5 text-[10px] uppercase text-accent-2">
+              Example
+            </span>
+          )}
         </div>
 
         <div className="flex items-center justify-between gap-2">

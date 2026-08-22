@@ -12,9 +12,13 @@ export type Project = {
   specs?: { label: string; value: string }[];
   links?: { label: string; href: string }[];
   coverGradient: [string, string];
+  // Marks fictional placeholder projects so the UI can flag them clearly.
+  // Remove this field (or set to false) once you swap in a real project.
+  isExample?: boolean;
 };
 
-// Placeholder projects — swap in your real writeups, specs, and links.
+// Illustrative example projects only — these are not real work.
+// Swap in real writeups, specs, and links, and drop `isExample` once you do.
 // Keep the shape the same and everything (grid + detail pages) updates automatically.
 export const projects: Project[] = [
   {
@@ -45,6 +49,7 @@ export const projects: Project[] = [
       { label: "Design report (PDF)", href: "#" },
     ],
     coverGradient: ["#22d3ee", "#0ea5e9"],
+    isExample: true,
   },
   {
     slug: "fpga-audio-dsp",
@@ -74,6 +79,7 @@ export const projects: Project[] = [
       { label: "Demo video", href: "#" },
     ],
     coverGradient: ["#f5a524", "#f97316"],
+    isExample: true,
   },
   {
     slug: "iot-environmental-mesh",
@@ -103,6 +109,7 @@ export const projects: Project[] = [
       { label: "Write-up", href: "#" },
     ],
     coverGradient: ["#34d399", "#22d3ee"],
+    isExample: true,
   },
   {
     slug: "line-following-robot",
@@ -127,6 +134,7 @@ export const projects: Project[] = [
     ],
     links: [{ label: "GitHub", href: "#" }],
     coverGradient: ["#a78bfa", "#818cf8"],
+    isExample: true,
   },
   {
     slug: "analog-overdrive-pedal",
@@ -151,6 +159,7 @@ export const projects: Project[] = [
     ],
     links: [{ label: "GitHub", href: "#" }],
     coverGradient: ["#f472b6", "#f5a524"],
+    isExample: true,
   },
   {
     slug: "rf-antenna-frontend",
@@ -175,6 +184,7 @@ export const projects: Project[] = [
     ],
     links: [{ label: "GitHub", href: "#" }],
     coverGradient: ["#fb7185", "#f43f5e"],
+    isExample: true,
   },
 ];
 

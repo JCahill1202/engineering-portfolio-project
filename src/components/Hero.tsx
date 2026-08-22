@@ -18,7 +18,7 @@ export function Hero() {
           className="font-mono-label mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-bg-raised px-3 py-1 text-xs uppercase text-accent"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse-slow" />
-          Available for internships / new grad roles
+          Open to internship opportunities
         </motion.p>
 
         <motion.h1
@@ -36,7 +36,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="font-display mt-3 max-w-2xl text-2xl font-medium text-muted sm:text-3xl"
         >
-          {site.role} <span className="text-accent">/</span> {site.degree}
+          {site.role} <span className="text-accent">/</span> {site.school}
         </motion.h2>
 
         <motion.p
