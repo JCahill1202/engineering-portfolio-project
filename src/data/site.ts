@@ -6,7 +6,7 @@ export const site = {
     "I'm a physics major picking up an EE minor, and most of what I know about circuits and firmware comes from building things on my own — not classwork alone. I like taking a project from a schematic to a working prototype on the bench.",
   location: "Boston, MA",
   school: "Northeastern University",
-  degree: "B.S. Physics — Minor in Electrical Engineering & Mathematics",
+  degree: "B.S. Physics, Minor in EE & Math (in progress)",
   gpa: "3.822",
   expectedGraduation: "May 2028",
   email: "cahill.jac@northeastern.edu",

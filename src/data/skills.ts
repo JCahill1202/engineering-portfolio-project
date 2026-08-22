@@ -36,9 +36,9 @@ export const experience = [
     ],
   },
   {
-    role: "B.S. Physics — Minor in Electrical Engineering & Mathematics",
-    org: "Northeastern University",
-    period: "Expected May 2028",
+    role: "Physics Major, Minor in Electrical Engineering & Mathematics",
+    org: "Northeastern University — Expected Graduation May 2028",
+    period: "In Progress",
     bullets: [
       "Cumulative GPA: 3.822, Dean's List",
       "Relevant Coursework: Advanced Physics Lab, Electronics, Electronics Lab, Electricity and Magnetism 1, Foundations of Theoretical Physics, Modern Physics, Computational Problem Solving (Python), Differential Equations, Linear Algebra",
