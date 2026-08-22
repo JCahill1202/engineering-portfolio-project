@@ -11,20 +11,10 @@ export function Hero() {
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden pt-24">
       <CircuitBackground />
       <div className="relative mx-auto w-full max-w-6xl px-6">
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="font-mono-label mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-bg-raised px-3 py-1 text-xs uppercase text-accent"
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse-slow" />
-          Open to internship opportunities
-        </motion.p>
-
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          transition={{ duration: 0.7 }}
           className="font-display max-w-3xl text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl"
         >
           {site.name}
