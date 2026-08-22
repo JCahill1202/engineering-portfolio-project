@@ -1,9 +1,12 @@
 export type ProjectImage = { src: string; alt: string; caption?: string };
+export type ProjectVideo = { src: string; caption?: string };
 
 export type ProjectVariant = {
   name: string;
   description: string;
   images: ProjectImage[];
+  // Short, muted, looping demo clip (no sound needed) shown alongside the gallery.
+  video?: ProjectVideo;
   specs?: { label: string; value: string }[];
 };
 
@@ -214,6 +217,10 @@ export const projects: Project[] = [
           { label: "Timing capacitor", value: "1000 µF" },
           { label: "LED banks", value: "3 yellow, 3 green" },
         ],
+        video: {
+          src: "/projects/555-timer-led-pcbs/astable-demo.mp4",
+          caption: "Prototype in action",
+        },
         images: [
           {
             src: "/projects/555-timer-led-pcbs/astable-schematic.png",

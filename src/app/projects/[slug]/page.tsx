@@ -175,6 +175,23 @@ export default async function ProjectPage({
                       ))}
                     </div>
                   )}
+                  {variant.video && (
+                    <div className="mt-6 w-full max-w-[220px] overflow-hidden rounded-2xl border border-border bg-bg-raised">
+                      <video
+                        src={variant.video.src}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full"
+                      />
+                      {variant.video.caption && (
+                        <p className="font-mono-label border-t border-border px-4 py-2.5 text-xs uppercase text-muted">
+                          {variant.video.caption}
+                        </p>
+                      )}
+                    </div>
+                  )}
                   <div className="mt-6 grid gap-4 sm:grid-cols-2">
                     {variant.images.map((img) => (
                       <div key={img.src} className="overflow-hidden rounded-2xl border border-border bg-bg-raised">
