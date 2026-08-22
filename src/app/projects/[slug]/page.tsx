@@ -165,6 +165,16 @@ export default async function ProjectPage({
                 <Reveal key={variant.name}>
                   <h2 className="font-display text-xl font-semibold">{variant.name}</h2>
                   <p className="mt-3 max-w-2xl text-muted leading-relaxed">{variant.description}</p>
+                  {variant.specs && variant.specs.length > 0 && (
+                    <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+                      {variant.specs.map((s) => (
+                        <p key={s.label} className="text-sm">
+                          <span className="text-muted">{s.label}:</span>{" "}
+                          <span className="font-medium">{s.value}</span>
+                        </p>
+                      ))}
+                    </div>
+                  )}
                   <div className="mt-6 grid gap-4 sm:grid-cols-2">
                     {variant.images.map((img) => (
                       <div key={img.src} className="overflow-hidden rounded-2xl border border-border bg-bg-raised">

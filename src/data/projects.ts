@@ -4,6 +4,7 @@ export type ProjectVariant = {
   name: string;
   description: string;
   images: ProjectImage[];
+  specs?: { label: string; value: string }[];
 };
 
 export type Project = {
@@ -158,19 +159,14 @@ export const projects: Project[] = [
     tools: ["KiCad", "555 Timer IC", "Soldering"],
     role: "Sole designer: schematic, PCB layout, prototype",
     summary:
-      "A pair of small 555 timer boards, one bistable and one astable, designed from schematic through PCB layout in KiCad. The bistable version uses two pushbuttons wired to the RST pin and the tied TRIG/THRES pins to manually latch an LED on and off, acting as a simple set-reset flip-flop.",
+      "A pair of small 555 timer boards, one bistable and one astable, each designed from schematic through PCB layout in KiCad and hand-soldered as a prototype. The bistable version uses two pushbuttons to manually latch an LED on and off, acting as a simple set-reset flip-flop. The astable version free-runs as an oscillator, blinking two banks of LEDs on its own.",
     highlights: [
       "Designed the bistable 555 timer schematic in KiCad, using pin 4 (RST) and the tied THRES/TRIG inputs (pins 2 & 6) as manual reset and set pushbuttons to latch the LED on and off",
-      "Laid out a 2-layer PCB in KiCad for the circuit and rendered a 3D preview of the board before fabrication",
-      "Hand-soldered a dead-bug style prototype directly on the IC's leads to validate the design before committing to a board",
-      "Sized the pull-up resistors (R1/R2, 1 kΩ) and LED current-limiting resistor (R3, 330 Ω) for the +5 V supply",
+      "Designed the astable 555 timer schematic in KiCad, using an RC timing network (R1, R2, and a timing capacitor) to free-run the timer and blink two banks of LEDs off its output",
+      "Laid out 2-layer PCBs in KiCad for both circuits and rendered 3D previews of each board before fabrication",
+      "Hand-soldered dead-bug style prototypes of both circuits directly on the ICs' leads to validate each design before committing to a board",
     ],
-    specs: [
-      { label: "Supply", value: "+5 V" },
-      { label: "Pull-up resistors", value: "1 kΩ (R1, R2)" },
-      { label: "LED resistor", value: "330 Ω (R3)" },
-      { label: "Decoupling cap", value: "0.1 µF" },
-    ],
+    specs: [{ label: "Supply", value: "+5 V" }],
     coverGradient: ["#f472b6", "#f5a524"],
     coverImage: {
       src: "/projects/555-timer-led-pcbs/bistable-pcb-render.png",
@@ -181,6 +177,11 @@ export const projects: Project[] = [
         name: "Bistable version",
         description:
           "Two pushbuttons act as manual set/reset inputs: one latches the LED on, and the other resets it off, using the 555's RST pin and tied TRIG/THRES pins instead of the usual RC timing network.",
+        specs: [
+          { label: "Pull-up resistors", value: "1 kΩ (R1, R2)" },
+          { label: "LED resistor", value: "330 Ω (R3)" },
+          { label: "Decoupling cap", value: "0.1 µF" },
+        ],
         images: [
           {
             src: "/projects/555-timer-led-pcbs/bistable-schematic.png",
@@ -200,6 +201,38 @@ export const projects: Project[] = [
           {
             src: "/projects/555-timer-led-pcbs/bistable-prototype.jpeg",
             alt: "Hand-soldered dead-bug prototype of the bistable 555 timer circuit",
+            caption: "Hand-soldered prototype",
+          },
+        ],
+      },
+      {
+        name: "Astable version",
+        description:
+          "An RC timing network (R1, R2, and a timing capacitor) makes the 555 free-run as an oscillator, with its output driving two banks of LEDs so they blink on their own with no input needed.",
+        specs: [
+          { label: "Timing resistors", value: "15 kΩ (R1), 1 kΩ (R2)" },
+          { label: "Timing capacitor", value: "1000 µF" },
+          { label: "LED banks", value: "3 yellow, 3 green" },
+        ],
+        images: [
+          {
+            src: "/projects/555-timer-led-pcbs/astable-schematic.png",
+            alt: "Astable 555 timer KiCad schematic",
+            caption: "KiCad schematic",
+          },
+          {
+            src: "/projects/555-timer-led-pcbs/astable-pcb-layout.png",
+            alt: "Astable 555 timer PCB layout in KiCad",
+            caption: "PCB layout",
+          },
+          {
+            src: "/projects/555-timer-led-pcbs/astable-pcb-render.png",
+            alt: "3D render of the astable 555 timer PCB",
+            caption: "3D board render",
+          },
+          {
+            src: "/projects/555-timer-led-pcbs/astable-prototype.jpeg",
+            alt: "Hand-soldered dead-bug prototype of the astable 555 timer circuit",
             caption: "Hand-soldered prototype",
           },
         ],
