@@ -129,6 +129,11 @@ export const projects: Project[] = [
     },
     gallery: [
       {
+        src: "/projects/chess-set/chess-board.jpeg",
+        alt: "The full finished chess board and piece set",
+        caption: "Full board",
+      },
+      {
         src: "/projects/chess-set/king-model.png",
         alt: "SolidWorks model of the king",
         caption: "King",
