@@ -100,6 +100,72 @@ export const projects: Project[] = [
     isExample: true,
   },
   {
+    slug: "magnetic-chess-set",
+    title: "Magnetic 3D-Printed Chess Set",
+    tagline: "A fully original chess set with magnets in every piece and every board square",
+    category: "3D Design & Fabrication",
+    featured: true,
+    year: "2026",
+    tools: ["SolidWorks", "FDM 3D Printing", "Slicer software"],
+    role: "Sole designer: modeling, printing, assembly",
+    summary:
+      "A complete chess set designed from scratch in SolidWorks and FDM printed piece by piece. Every piece and every board square has a magnet embedded inside it, so pieces snap into place on the board instead of sliding around.",
+    highlights: [
+      "Balanced size constraints against sculptural detail on the more complex pieces, especially the knight's head and the king and queen's crowns",
+      "Designed the board as 64 individually printed squares plus a frame, using three colors total",
+      "Tested every magnet's polarity before installing it, then designed magnet cavities into each piece and square so the print could be paused partway through, the magnet inserted, and the print resumed around it",
+      "Modeled the knight's organic curves by tracing reference images and lofting between the traced profiles, rather than using simple primitive shapes",
+    ],
+    specs: [
+      { label: "Pieces", value: "32, fully original design" },
+      { label: "Board", value: "64 individually printed squares + frame" },
+      { label: "Colors", value: "3" },
+      { label: "Print process", value: "FDM, pause/resume for magnets" },
+    ],
+    coverGradient: ["#facc15", "#92400e"],
+    coverImage: {
+      src: "/projects/chess-set/chess-board.jpeg",
+      alt: "The finished 3D-printed magnetic chess set, fully set up",
+    },
+    gallery: [
+      {
+        src: "/projects/chess-set/king-model.png",
+        alt: "SolidWorks model of the king",
+        caption: "King",
+      },
+      {
+        src: "/projects/chess-set/queen-model.png",
+        alt: "SolidWorks model of the queen",
+        caption: "Queen",
+      },
+      {
+        src: "/projects/chess-set/knight-model.png",
+        alt: "SolidWorks model of the knight",
+        caption: "Knight",
+      },
+      {
+        src: "/projects/chess-set/bishop-model.png",
+        alt: "SolidWorks model of the bishop",
+        caption: "Bishop",
+      },
+      {
+        src: "/projects/chess-set/rook-model.png",
+        alt: "SolidWorks model of the rook",
+        caption: "Rook",
+      },
+      {
+        src: "/projects/chess-set/pawn-model.png",
+        alt: "SolidWorks model of the pawn",
+        caption: "Pawn",
+      },
+      {
+        src: "/projects/chess-set/knight-magnet-cross-section.png",
+        alt: "Slicer cross-section of the knight showing the magnet cavity",
+        caption: "Magnet cavity, sliced cross-section",
+      },
+    ],
+  },
+  {
     slug: "iot-environmental-mesh",
     title: "Low-Power Environmental Sensor Mesh",
     tagline: "Solar-powered sensor nodes reporting air quality over a BLE mesh",
@@ -272,72 +338,6 @@ export const projects: Project[] = [
     links: [{ label: "GitHub", href: "#" }],
     coverGradient: ["#fb7185", "#f43f5e"],
     isExample: true,
-  },
-  {
-    slug: "magnetic-chess-set",
-    title: "Magnetic 3D-Printed Chess Set",
-    tagline: "A fully original chess set with magnets in every piece and every board square",
-    category: "3D Design & Fabrication",
-    featured: true,
-    year: "2026",
-    tools: ["SolidWorks", "FDM 3D Printing", "Slicer software"],
-    role: "Sole designer: modeling, printing, assembly",
-    summary:
-      "A complete chess set designed from scratch in SolidWorks and FDM printed piece by piece. Every piece and every board square has a magnet embedded inside it, so pieces snap into place on the board instead of sliding around.",
-    highlights: [
-      "Balanced size constraints against sculptural detail on the more complex pieces, especially the knight's head and the king and queen's crowns",
-      "Designed the board as 64 individually printed squares plus a frame, using three colors total instead of the usual two-tone checkerboard",
-      "Tested every magnet's polarity before installing it, then designed magnet cavities into each piece and square so the print could be paused partway through, the magnet inserted, and the print resumed around it",
-      "Modeled the knight's organic curves by tracing reference images and lofting between the traced profiles, rather than using simple primitive shapes",
-    ],
-    specs: [
-      { label: "Pieces", value: "32, fully original design" },
-      { label: "Board", value: "64 individually printed squares + frame" },
-      { label: "Colors", value: "3" },
-      { label: "Print process", value: "FDM, pause/resume for magnets" },
-    ],
-    coverGradient: ["#facc15", "#92400e"],
-    coverImage: {
-      src: "/projects/chess-set/chess-board.jpeg",
-      alt: "The finished 3D-printed magnetic chess set, fully set up",
-    },
-    gallery: [
-      {
-        src: "/projects/chess-set/king-model.png",
-        alt: "SolidWorks model of the king",
-        caption: "King",
-      },
-      {
-        src: "/projects/chess-set/queen-model.png",
-        alt: "SolidWorks model of the queen",
-        caption: "Queen",
-      },
-      {
-        src: "/projects/chess-set/knight-model.png",
-        alt: "SolidWorks model of the knight",
-        caption: "Knight",
-      },
-      {
-        src: "/projects/chess-set/bishop-model.png",
-        alt: "SolidWorks model of the bishop",
-        caption: "Bishop",
-      },
-      {
-        src: "/projects/chess-set/rook-model.png",
-        alt: "SolidWorks model of the rook",
-        caption: "Rook",
-      },
-      {
-        src: "/projects/chess-set/pawn-model.png",
-        alt: "SolidWorks model of the pawn",
-        caption: "Pawn",
-      },
-      {
-        src: "/projects/chess-set/knight-magnet-cross-section.png",
-        alt: "Slicer cross-section of the knight showing the magnet cavity",
-        caption: "Magnet cavity, sliced cross-section",
-      },
-    ],
   },
 ];
 
