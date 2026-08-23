@@ -216,6 +216,32 @@ export default async function ProjectPage({
               ))}
             </div>
           )}
+
+          {project.gallery && project.gallery.length > 0 && (
+            <Reveal className="mt-16">
+              <h2 className="font-display text-xl font-semibold">Gallery</h2>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {project.gallery.map((img) => (
+                  <div key={img.src} className="overflow-hidden rounded-2xl border border-border bg-bg-raised">
+                    <div className="relative aspect-[4/3] w-full">
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        className="object-contain p-3"
+                        sizes="(min-width: 1024px) 290px, (min-width: 768px) 440px, 100vw"
+                      />
+                    </div>
+                    {img.caption && (
+                      <p className="font-mono-label border-t border-border px-4 py-2.5 text-xs uppercase text-muted">
+                        {img.caption}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          )}
         </section>
 
         {otherProjects.length > 0 && (
