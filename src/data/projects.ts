@@ -363,14 +363,14 @@ export const projects: Project[] = [
     tagline: "A physical tic-tac-toe game, rebuilt and documented through multiple hardware iterations",
     category: "Electronics",
     featured: true,
-    year: "2025",
-    tools: ["Toggle switches", "RGB LEDs", "Breadboard", "Soldering"],
+    year: "2025-2026",
+    tools: ["Toggle switches", "RGB LEDs", "Breadboard", "Soldering", "Arduino", "Joystick module"],
     role: "Sole designer: circuit design, prototyping, iteration",
     summary:
       "An ongoing project to build a physical, hardware-based tic-tac-toe game. Rather than only showing a finished result, this project is documented iteration by iteration, starting from its first breadboard prototype and updated as more work is done.",
     highlights: [
       "Documenting the full design process from first prototype through later revisions, not just a polished final result",
-      "First version (a final project for an Electronics course) uses nine independent 3-way toggle switch, RGB LED, and resistor circuits, all tied to a common ground and power supply, with light soldering on the switch contacts",
+      "Evolved from purely discrete toggle-switch and RGB LED circuits to an Arduino-driven build with joystick input",
     ],
     coverGradient: ["#22d3ee", "#818cf8"],
     coverImage: {
@@ -396,6 +396,16 @@ export const projects: Project[] = [
             caption: "Toggle Proto 2",
           },
         ],
+      },
+      {
+        date: "March 6, 2026",
+        title: "Switched to an Arduino and joystick for analog control",
+        description:
+          "Moved off manual toggle switches to an Arduino microcontroller, adding a joystick for analog control over the LEDs. Wrote a program that tracks the LEDs in an array, follows which one the joystick is hovering over, and lights it up on joystick button press.",
+        video: {
+          src: "/projects/tic-tac-toe/joystick-test.mp4",
+          caption: "Joystick-controlled LED test",
+        },
       },
     ],
   },
