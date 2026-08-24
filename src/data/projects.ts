@@ -10,6 +10,15 @@ export type ProjectVariant = {
   specs?: { label: string; value: string }[];
 };
 
+// One dated entry in an ongoing project's build log, e.g. "Dec 3, 2025: first breadboard prototype".
+export type BuildLogEntry = {
+  date: string;
+  title: string;
+  description: string;
+  images?: ProjectImage[];
+  video?: ProjectVideo;
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -30,6 +39,10 @@ export type Project = {
   variants?: ProjectVariant[];
   // Simple flat image gallery for single-story projects that don't need the variants split.
   gallery?: ProjectImage[];
+  // Chronological log of iterations for an ongoing project, oldest first.
+  buildLog?: BuildLogEntry[];
+  // Flags an actively evolving project so the UI can show a "Work in Progress" badge.
+  inProgress?: boolean;
   // Marks fictional placeholder projects so the UI can flag them clearly.
   // Remove this field (or set to false) once you swap in a real project.
   isExample?: boolean;
@@ -343,6 +356,48 @@ export const projects: Project[] = [
     links: [{ label: "GitHub", href: "#" }],
     coverGradient: ["#fb7185", "#f43f5e"],
     isExample: true,
+  },
+  {
+    slug: "tic-tac-toe-game",
+    title: "Interactive Tic-Tac-Toe Board",
+    tagline: "A physical tic-tac-toe game, rebuilt and documented through multiple hardware iterations",
+    category: "Electronics",
+    featured: true,
+    year: "2025",
+    tools: ["Toggle switches", "RGB LEDs", "Breadboard", "Soldering"],
+    role: "Sole designer: circuit design, prototyping, iteration",
+    summary:
+      "An ongoing project to build a physical, hardware-based tic-tac-toe game. Rather than only showing a finished result, this project is documented iteration by iteration, starting from its first breadboard prototype and updated as more work is done.",
+    highlights: [
+      "Documenting the full design process from first prototype through later revisions, not just a polished final result",
+      "First version (a final project for an Electronics course) uses nine independent 3-way toggle switch, RGB LED, and resistor circuits, all tied to a common ground and power supply, with light soldering on the switch contacts",
+    ],
+    coverGradient: ["#22d3ee", "#818cf8"],
+    coverImage: {
+      src: "/projects/tic-tac-toe/toggle-proto-1.jpeg",
+      alt: "First breadboard prototype of the tic-tac-toe game using toggle switches and RGB LEDs",
+    },
+    inProgress: true,
+    buildLog: [
+      {
+        date: "December 3, 2025",
+        title: "First version: toggle-switch prototype (Electronics course final project)",
+        description:
+          "Nine independent 3-way toggle switch, RGB LED, and resistor circuits, all tied to a common ground and power supply. Flipping a switch one direction diverts power to light the RGB LED one color; the third pin on each switch isn't used. Built on breadboards, with light soldering on the toggle switch contacts.",
+        images: [
+          {
+            src: "/projects/tic-tac-toe/toggle-proto-1.jpeg",
+            alt: "Toggle switch and RGB LED breadboard prototype, wide view",
+            caption: "Toggle Proto 1",
+          },
+          {
+            src: "/projects/tic-tac-toe/toggle-proto-2.jpeg",
+            alt: "Toggle switch and RGB LED breadboard prototype, near the oscilloscope",
+            caption: "Toggle Proto 2",
+          },
+        ],
+      },
+    ],
   },
 ];
 

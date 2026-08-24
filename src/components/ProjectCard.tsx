@@ -47,6 +47,11 @@ export function ProjectCard({ project, delay = 0 }: { project: Project; delay?: 
               Example
             </span>
           )}
+          {project.inProgress && (
+            <span className="font-mono-label absolute right-3 top-3 rounded-full border border-accent/40 bg-bg/80 px-2 py-0.5 text-[10px] uppercase text-accent">
+              Work in progress
+            </span>
+          )}
         </div>
 
         <div className="flex items-center justify-between gap-2">

@@ -63,6 +63,12 @@ export default async function ProjectPage({
                   project.
                 </div>
               )}
+              {project.inProgress && (
+                <div className="mt-6 rounded-xl border border-accent/30 bg-accent/5 px-5 py-3 text-sm text-accent">
+                  This project is a work in progress. The build log below shows the process and iterations
+                  so far, and will keep growing as more work is done.
+                </div>
+              )}
 
               <div className="mt-6 flex items-center gap-3">
                 <span className="font-mono-label text-xs uppercase text-accent">{project.category}</span>
@@ -241,6 +247,60 @@ export default async function ProjectPage({
                 ))}
               </div>
             </Reveal>
+          )}
+
+          {project.buildLog && project.buildLog.length > 0 && (
+            <div className="mt-16">
+              <h2 className="font-display text-xl font-semibold">Build Log</h2>
+              <div className="relative mt-8 space-y-14">
+                <div className="absolute left-[7px] top-2 bottom-2 w-px bg-border" />
+                {project.buildLog.map((entry) => (
+                  <Reveal key={entry.date + entry.title} className="relative pl-8">
+                    <span className="absolute left-0 top-1.5 h-3.5 w-3.5 rounded-full border-2 border-accent bg-bg" />
+                    <p className="font-mono-label text-xs uppercase text-accent">{entry.date}</p>
+                    <h3 className="font-display mt-1 text-lg font-semibold">{entry.title}</h3>
+                    <p className="mt-2 max-w-2xl text-muted leading-relaxed">{entry.description}</p>
+
+                    {entry.video && (
+                      <div className="mt-5 w-full max-w-[220px] overflow-hidden rounded-2xl border border-border bg-bg-raised">
+                        <video src={entry.video.src} autoPlay loop muted playsInline className="w-full" />
+                        {entry.video.caption && (
+                          <p className="font-mono-label border-t border-border px-4 py-2.5 text-xs uppercase text-muted">
+                            {entry.video.caption}
+                          </p>
+                        )}
+                      </div>
+                    )}
+
+                    {entry.images && entry.images.length > 0 && (
+                      <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                        {entry.images.map((img) => (
+                          <div
+                            key={img.src}
+                            className="overflow-hidden rounded-2xl border border-border bg-bg-raised"
+                          >
+                            <div className="relative aspect-[4/3] w-full">
+                              <Image
+                                src={img.src}
+                                alt={img.alt}
+                                fill
+                                className="object-contain p-3"
+                                sizes="(min-width: 768px) 440px, 100vw"
+                              />
+                            </div>
+                            {img.caption && (
+                              <p className="font-mono-label border-t border-border px-4 py-2.5 text-xs uppercase text-muted">
+                                {img.caption}
+                              </p>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </Reveal>
+                ))}
+              </div>
+            </div>
           )}
         </section>
 
