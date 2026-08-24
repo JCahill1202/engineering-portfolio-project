@@ -364,7 +364,17 @@ export const projects: Project[] = [
     category: "Electronics",
     featured: true,
     year: "2025-2026",
-    tools: ["Toggle switches", "RGB LEDs", "Breadboard", "Soldering", "Arduino", "Joystick module", "WS2812B LEDs"],
+    tools: [
+      "Toggle switches",
+      "RGB LEDs",
+      "Breadboard",
+      "Soldering",
+      "Arduino",
+      "Joystick module",
+      "WS2812B LEDs",
+      "SolidWorks/FreeCAD",
+      "3D Printing",
+    ],
     role: "Sole designer: circuit design, prototyping, iteration",
     summary:
       "An ongoing project to build a physical, hardware-based tic-tac-toe game. Rather than only showing a finished result, this project is documented iteration by iteration, starting from its first breadboard prototype and updated as more work is done.",
@@ -417,6 +427,19 @@ export const projects: Project[] = [
             src: "/projects/tic-tac-toe/ws2812b-splice.jpeg",
             alt: "Three WS2812B LED strip segments spliced together with jumper wires",
             caption: "Spliced WS2812B segments",
+          },
+        ],
+      },
+      {
+        date: "March 24, 2026",
+        title: "Custom 3D-printed shell and diffusing plates",
+        description:
+          "Designed and printed a custom housing to hold and protect the LED grid, with millimeter-thick white PLA diffusing plates over each square so the LEDs underneath illuminate the whole square instead of showing up as a single colored dot.",
+        images: [
+          {
+            src: "/projects/tic-tac-toe/3d-printed-shell.jpeg",
+            alt: "3D-printed shell with white PLA diffusing plates over the 3x3 LED grid",
+            caption: "3D-printed shell with diffusing plates",
           },
         ],
       },
