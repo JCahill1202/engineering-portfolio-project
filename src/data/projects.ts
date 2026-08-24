@@ -364,7 +364,7 @@ export const projects: Project[] = [
     category: "Electronics",
     featured: true,
     year: "2025-2026",
-    tools: ["Toggle switches", "RGB LEDs", "Breadboard", "Soldering", "Arduino", "Joystick module"],
+    tools: ["Toggle switches", "RGB LEDs", "Breadboard", "Soldering", "Arduino", "Joystick module", "WS2812B LEDs"],
     role: "Sole designer: circuit design, prototyping, iteration",
     summary:
       "An ongoing project to build a physical, hardware-based tic-tac-toe game. Rather than only showing a finished result, this project is documented iteration by iteration, starting from its first breadboard prototype and updated as more work is done.",
@@ -406,6 +406,19 @@ export const projects: Project[] = [
           src: "/projects/tic-tac-toe/joystick-test.mp4",
           caption: "Joystick-controlled LED test",
         },
+      },
+      {
+        date: "March 17, 2026",
+        title: "Switched to individually addressable WS2812B LEDs",
+        description:
+          "Moved to WS2812B individually addressable LED strips. The strip was cut into segments and spliced back together with jumper wires to form the tic-tac-toe grid layout.",
+        images: [
+          {
+            src: "/projects/tic-tac-toe/ws2812b-splice.jpeg",
+            alt: "Three WS2812B LED strip segments spliced together with jumper wires",
+            caption: "Spliced WS2812B segments",
+          },
+        ],
       },
     ],
   },
