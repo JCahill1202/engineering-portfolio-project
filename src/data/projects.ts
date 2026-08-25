@@ -52,119 +52,90 @@ export type Project = {
 // placeholder instead (shows a badge and banner) until it's swapped for real work.
 export const projects: Project[] = [
   {
-    slug: "magnetic-chess-set",
-    title: "Magnetic 3D-Printed Chess Set",
-    tagline: "A fully original chess set with magnets in every piece and every board square",
-    category: "3D Design & Fabrication",
+    slug: "tic-tac-toe-game",
+    title: "Interactive Tic-Tac-Toe Board",
+    tagline: "A physical tic-tac-toe game, rebuilt and documented through multiple hardware iterations",
+    category: "Electronics",
     featured: true,
-    year: "2026",
-    tools: ["SolidWorks", "FDM 3D Printing", "Slicer software"],
-    role: "Sole designer: modeling, printing, assembly",
+    year: "2025-2026",
+    tools: [
+      "Toggle switches",
+      "RGB LEDs",
+      "Breadboard",
+      "Soldering",
+      "Arduino",
+      "Joystick module",
+      "WS2812B LEDs",
+      "SolidWorks/FreeCAD",
+      "3D Printing",
+    ],
+    role: "Sole designer: circuit design, prototyping, iteration",
     summary:
-      "A complete chess set designed from scratch in SolidWorks and FDM printed piece by piece. Every piece and every board square has a magnet embedded inside it, so pieces snap into place on the board instead of sliding around.",
+      "An ongoing project to build a physical, hardware-based tic-tac-toe game. Rather than only showing a finished result, this project is documented iteration by iteration, starting from its first breadboard prototype and updated as more work is done.",
     highlights: [
-      "Balanced size constraints against sculptural detail on the more complex pieces, especially the knight's head and the king and queen's crowns",
-      "Designed the board as 64 individually printed squares plus a frame, using three colors total",
-      "Tested every magnet's polarity before installing it, then designed magnet cavities into each piece and square so the print could be paused partway through, the magnet inserted, and the print resumed around it",
-      "Modeled the knight's organic curves by tracing reference images and lofting between the traced profiles, rather than using simple primitive shapes",
+      "Documenting the full design process from first prototype through later revisions, not just a polished final result",
+      "Evolved from purely discrete toggle-switch and RGB LED circuits to an Arduino-driven build with joystick input",
     ],
-    specs: [
-      { label: "Pieces", value: "32, fully original design" },
-      { label: "Board", value: "64 individually printed squares + frame" },
-      { label: "Colors", value: "3" },
-      { label: "Print process", value: "FDM, pause/resume for magnets" },
-    ],
-    coverGradient: ["#facc15", "#92400e"],
+    coverGradient: ["#22d3ee", "#818cf8"],
     coverImage: {
-      src: "/projects/chess-set/chess-board.jpeg",
-      alt: "The finished 3D-printed magnetic chess set, fully set up",
+      src: "/projects/tic-tac-toe/3d-printed-shell.jpeg",
+      alt: "3D-printed shell with white PLA diffusing plates over the 3x3 LED grid",
     },
-    gallery: [
+    inProgress: true,
+    buildLog: [
       {
-        src: "/projects/chess-set/chess-board.jpeg",
-        alt: "The full finished chess board and piece set",
-        caption: "Full board",
+        date: "December 3, 2025",
+        title: "First version: toggle-switch prototype (Electronics course final project)",
+        description:
+          "Nine independent 3-way toggle switch, RGB LED, and resistor circuits, all tied to a common ground and power supply. Flipping a switch one direction diverts power to light the RGB LED one color; the third pin on each switch isn't used. Built on breadboards, with light soldering on the toggle switch contacts.",
+        images: [
+          {
+            src: "/projects/tic-tac-toe/toggle-proto-1.jpeg",
+            alt: "Toggle switch and RGB LED breadboard prototype, wide view",
+            caption: "Toggle Proto 1",
+          },
+          {
+            src: "/projects/tic-tac-toe/toggle-proto-2.jpeg",
+            alt: "Toggle switch and RGB LED breadboard prototype, near the oscilloscope",
+            caption: "Toggle Proto 2",
+          },
+        ],
       },
       {
-        src: "/projects/chess-set/king-model.png",
-        alt: "SolidWorks model of the king",
-        caption: "King",
+        date: "March 6, 2026",
+        title: "Switched to an Arduino and joystick for analog control",
+        description:
+          "Moved off manual toggle switches to an Arduino microcontroller, adding a joystick for analog control over the LEDs. Wrote a program that tracks the LEDs in an array, follows which one the joystick is hovering over, and lights it up on joystick button press.",
+        video: {
+          src: "/projects/tic-tac-toe/joystick-test.mp4",
+          caption: "Joystick-controlled LED test",
+        },
       },
       {
-        src: "/projects/chess-set/queen-model.png",
-        alt: "SolidWorks model of the queen",
-        caption: "Queen",
+        date: "March 17, 2026",
+        title: "Switched to individually addressable WS2812B LEDs",
+        description:
+          "Moved to WS2812B individually addressable LED strips. The strip was cut into segments and spliced back together with jumper wires to form the tic-tac-toe grid layout.",
+        images: [
+          {
+            src: "/projects/tic-tac-toe/ws2812b-splice.jpeg",
+            alt: "Three WS2812B LED strip segments spliced together with jumper wires",
+            caption: "Spliced WS2812B segments",
+          },
+        ],
       },
       {
-        src: "/projects/chess-set/knight-model.png",
-        alt: "SolidWorks model of the knight",
-        caption: "Knight",
-      },
-      {
-        src: "/projects/chess-set/bishop-model.png",
-        alt: "SolidWorks model of the bishop",
-        caption: "Bishop",
-      },
-      {
-        src: "/projects/chess-set/rook-model.png",
-        alt: "SolidWorks model of the rook",
-        caption: "Rook",
-      },
-      {
-        src: "/projects/chess-set/pawn-model.png",
-        alt: "SolidWorks model of the pawn",
-        caption: "Pawn",
-      },
-      {
-        src: "/projects/chess-set/knight-magnet-cross-section.png",
-        alt: "Slicer cross-section of the knight showing the magnet cavity",
-        caption: "Magnet cavity, sliced cross-section",
-      },
-    ],
-  },
-  {
-    slug: "weather-display",
-    title: "WiFi Weather Display",
-    tagline: "An ESP32 pulls live weather over WiFi and shows it on a 0.96\" OLED",
-    category: "Embedded Systems",
-    featured: true,
-    year: "2026",
-    tools: ["ESP32", "C++ (Arduino)", "0.96\" OLED", "Weather API", "Soldering", "3D Printing"],
-    role: "Sole designer: firmware, soldering, enclosure",
-    summary:
-      "A small ESP32-based display that connects to WiFi, pulls live weather data from an online API every 60 seconds, and shows the temperature, conditions, and \"feels like\" reading on a 0.96\" OLED screen.",
-    highlights: [
-      "Obtained an API key and connected the ESP32 to WiFi to pull live weather data, verifying functionality with real readings on the OLED",
-      "Polls the weather API on a 60-second interval and updates the OLED display automatically",
-      "Soldered the OLED display directly to the ESP32 dev board's pins for a permanent, breadboard-free assembly",
-      "Designed and 3D printed a custom enclosure with a cutout window for the OLED and a USB pass-through for power",
-    ],
-    specs: [
-      { label: "Microcontroller", value: "ESP32" },
-      { label: "Display", value: "0.96\" OLED" },
-      { label: "Update interval", value: "60 s" },
-      { label: "Connectivity", value: "WiFi + weather API" },
-    ],
-    coverGradient: ["#38bdf8", "#0f172a"],
-    coverImage: {
-      src: "/projects/weather-display/weather-display-test.jpeg",
-      alt: "Breadboard test of the ESP32 and OLED showing live weather data for Boston",
-    },
-    gallery: [
-      {
-        src: "/projects/weather-display/weather-display-test.jpeg",
-        alt: "Breadboard test of the ESP32 and OLED showing live weather data for Boston",
-        caption: "Functional test: live weather data",
-      },
-      {
-        src: "/projects/weather-display/weather-display-soldered.jpeg",
-        alt: "OLED display soldered directly to the ESP32 dev board",
-        caption: "OLED soldered to the ESP32",
-      },
-      {
-        src: "/projects/weather-display/weather-display-shell.jpeg",
-        alt: "Finished 3D-printed enclosure for the WiFi weather display",
-        caption: "3D-printed enclosure",
+        date: "March 24, 2026",
+        title: "Custom 3D-printed shell and diffusing plates",
+        description:
+          "Designed and printed a custom housing to hold and protect the LED grid, with millimeter-thick white PLA diffusing plates over each square so the LEDs underneath illuminate the whole square instead of showing up as a single colored dot.",
+        images: [
+          {
+            src: "/projects/tic-tac-toe/3d-printed-shell.jpeg",
+            alt: "3D-printed shell with white PLA diffusing plates over the 3x3 LED grid",
+            caption: "3D-printed shell with diffusing plates",
+          },
+        ],
       },
     ],
   },
@@ -313,90 +284,119 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "tic-tac-toe-game",
-    title: "Interactive Tic-Tac-Toe Board",
-    tagline: "A physical tic-tac-toe game, rebuilt and documented through multiple hardware iterations",
-    category: "Electronics",
+    slug: "magnetic-chess-set",
+    title: "Magnetic 3D-Printed Chess Set",
+    tagline: "A fully original chess set with magnets in every piece and every board square",
+    category: "3D Design & Fabrication",
     featured: true,
-    year: "2025-2026",
-    tools: [
-      "Toggle switches",
-      "RGB LEDs",
-      "Breadboard",
-      "Soldering",
-      "Arduino",
-      "Joystick module",
-      "WS2812B LEDs",
-      "SolidWorks/FreeCAD",
-      "3D Printing",
-    ],
-    role: "Sole designer: circuit design, prototyping, iteration",
+    year: "2026",
+    tools: ["SolidWorks", "FDM 3D Printing", "Slicer software"],
+    role: "Sole designer: modeling, printing, assembly",
     summary:
-      "An ongoing project to build a physical, hardware-based tic-tac-toe game. Rather than only showing a finished result, this project is documented iteration by iteration, starting from its first breadboard prototype and updated as more work is done.",
+      "A complete chess set designed from scratch in SolidWorks and FDM printed piece by piece. Every piece and every board square has a magnet embedded inside it, so pieces snap into place on the board instead of sliding around.",
     highlights: [
-      "Documenting the full design process from first prototype through later revisions, not just a polished final result",
-      "Evolved from purely discrete toggle-switch and RGB LED circuits to an Arduino-driven build with joystick input",
+      "Balanced size constraints against sculptural detail on the more complex pieces, especially the knight's head and the king and queen's crowns",
+      "Designed the board as 64 individually printed squares plus a frame, using three colors total",
+      "Tested every magnet's polarity before installing it, then designed magnet cavities into each piece and square so the print could be paused partway through, the magnet inserted, and the print resumed around it",
+      "Modeled the knight's organic curves by tracing reference images and lofting between the traced profiles, rather than using simple primitive shapes",
     ],
-    coverGradient: ["#22d3ee", "#818cf8"],
+    specs: [
+      { label: "Pieces", value: "32, fully original design" },
+      { label: "Board", value: "64 individually printed squares + frame" },
+      { label: "Colors", value: "3" },
+      { label: "Print process", value: "FDM, pause/resume for magnets" },
+    ],
+    coverGradient: ["#facc15", "#92400e"],
     coverImage: {
-      src: "/projects/tic-tac-toe/3d-printed-shell.jpeg",
-      alt: "3D-printed shell with white PLA diffusing plates over the 3x3 LED grid",
+      src: "/projects/chess-set/chess-board.jpeg",
+      alt: "The finished 3D-printed magnetic chess set, fully set up",
     },
-    inProgress: true,
-    buildLog: [
+    gallery: [
       {
-        date: "December 3, 2025",
-        title: "First version: toggle-switch prototype (Electronics course final project)",
-        description:
-          "Nine independent 3-way toggle switch, RGB LED, and resistor circuits, all tied to a common ground and power supply. Flipping a switch one direction diverts power to light the RGB LED one color; the third pin on each switch isn't used. Built on breadboards, with light soldering on the toggle switch contacts.",
-        images: [
-          {
-            src: "/projects/tic-tac-toe/toggle-proto-1.jpeg",
-            alt: "Toggle switch and RGB LED breadboard prototype, wide view",
-            caption: "Toggle Proto 1",
-          },
-          {
-            src: "/projects/tic-tac-toe/toggle-proto-2.jpeg",
-            alt: "Toggle switch and RGB LED breadboard prototype, near the oscilloscope",
-            caption: "Toggle Proto 2",
-          },
-        ],
+        src: "/projects/chess-set/chess-board.jpeg",
+        alt: "The full finished chess board and piece set",
+        caption: "Full board",
       },
       {
-        date: "March 6, 2026",
-        title: "Switched to an Arduino and joystick for analog control",
-        description:
-          "Moved off manual toggle switches to an Arduino microcontroller, adding a joystick for analog control over the LEDs. Wrote a program that tracks the LEDs in an array, follows which one the joystick is hovering over, and lights it up on joystick button press.",
-        video: {
-          src: "/projects/tic-tac-toe/joystick-test.mp4",
-          caption: "Joystick-controlled LED test",
-        },
+        src: "/projects/chess-set/king-model.png",
+        alt: "SolidWorks model of the king",
+        caption: "King",
       },
       {
-        date: "March 17, 2026",
-        title: "Switched to individually addressable WS2812B LEDs",
-        description:
-          "Moved to WS2812B individually addressable LED strips. The strip was cut into segments and spliced back together with jumper wires to form the tic-tac-toe grid layout.",
-        images: [
-          {
-            src: "/projects/tic-tac-toe/ws2812b-splice.jpeg",
-            alt: "Three WS2812B LED strip segments spliced together with jumper wires",
-            caption: "Spliced WS2812B segments",
-          },
-        ],
+        src: "/projects/chess-set/queen-model.png",
+        alt: "SolidWorks model of the queen",
+        caption: "Queen",
       },
       {
-        date: "March 24, 2026",
-        title: "Custom 3D-printed shell and diffusing plates",
-        description:
-          "Designed and printed a custom housing to hold and protect the LED grid, with millimeter-thick white PLA diffusing plates over each square so the LEDs underneath illuminate the whole square instead of showing up as a single colored dot.",
-        images: [
-          {
-            src: "/projects/tic-tac-toe/3d-printed-shell.jpeg",
-            alt: "3D-printed shell with white PLA diffusing plates over the 3x3 LED grid",
-            caption: "3D-printed shell with diffusing plates",
-          },
-        ],
+        src: "/projects/chess-set/knight-model.png",
+        alt: "SolidWorks model of the knight",
+        caption: "Knight",
+      },
+      {
+        src: "/projects/chess-set/bishop-model.png",
+        alt: "SolidWorks model of the bishop",
+        caption: "Bishop",
+      },
+      {
+        src: "/projects/chess-set/rook-model.png",
+        alt: "SolidWorks model of the rook",
+        caption: "Rook",
+      },
+      {
+        src: "/projects/chess-set/pawn-model.png",
+        alt: "SolidWorks model of the pawn",
+        caption: "Pawn",
+      },
+      {
+        src: "/projects/chess-set/knight-magnet-cross-section.png",
+        alt: "Slicer cross-section of the knight showing the magnet cavity",
+        caption: "Magnet cavity, sliced cross-section",
+      },
+    ],
+  },
+  {
+    slug: "weather-display",
+    title: "WiFi Weather Display",
+    tagline: "An ESP32 pulls live weather over WiFi and shows it on a 0.96\" OLED",
+    category: "Embedded Systems",
+    featured: true,
+    year: "2026",
+    tools: ["ESP32", "C++ (Arduino)", "0.96\" OLED", "Weather API", "Soldering", "3D Printing"],
+    role: "Sole designer: firmware, soldering, enclosure",
+    summary:
+      "A small ESP32-based display that connects to WiFi, pulls live weather data from an online API every 60 seconds, and shows the temperature, conditions, and \"feels like\" reading on a 0.96\" OLED screen.",
+    highlights: [
+      "Obtained an API key and connected the ESP32 to WiFi to pull live weather data, verifying functionality with real readings on the OLED",
+      "Polls the weather API on a 60-second interval and updates the OLED display automatically",
+      "Soldered the OLED display directly to the ESP32 dev board's pins for a permanent, breadboard-free assembly",
+      "Designed and 3D printed a custom enclosure with a cutout window for the OLED and a USB pass-through for power",
+    ],
+    specs: [
+      { label: "Microcontroller", value: "ESP32" },
+      { label: "Display", value: "0.96\" OLED" },
+      { label: "Update interval", value: "60 s" },
+      { label: "Connectivity", value: "WiFi + weather API" },
+    ],
+    coverGradient: ["#38bdf8", "#0f172a"],
+    coverImage: {
+      src: "/projects/weather-display/weather-display-test.jpeg",
+      alt: "Breadboard test of the ESP32 and OLED showing live weather data for Boston",
+    },
+    gallery: [
+      {
+        src: "/projects/weather-display/weather-display-test.jpeg",
+        alt: "Breadboard test of the ESP32 and OLED showing live weather data for Boston",
+        caption: "Functional test: live weather data",
+      },
+      {
+        src: "/projects/weather-display/weather-display-soldered.jpeg",
+        alt: "OLED display soldered directly to the ESP32 dev board",
+        caption: "OLED soldered to the ESP32",
+      },
+      {
+        src: "/projects/weather-display/weather-display-shell.jpeg",
+        alt: "Finished 3D-printed enclosure for the WiFi weather display",
+        caption: "3D-printed enclosure",
       },
     ],
   },
