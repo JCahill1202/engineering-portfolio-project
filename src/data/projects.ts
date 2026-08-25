@@ -48,70 +48,9 @@ export type Project = {
   isExample?: boolean;
 };
 
-// Illustrative example projects only. These are not real work.
-// Swap in real writeups, specs, and links, and drop `isExample` once you do.
-// Keep the shape the same and everything (grid + detail pages) updates automatically.
+// Real projects. Set `isExample: true` on an entry to flag it as an illustrative
+// placeholder instead (shows a badge and banner) until it's swapped for real work.
 export const projects: Project[] = [
-  {
-    slug: "regenerative-bldc-controller",
-    title: "Regenerative BLDC Motor Controller",
-    tagline: "3-phase FOC driver with regenerative braking for an e-skateboard",
-    category: "Power Electronics",
-    featured: true,
-    year: "2025",
-    tools: ["KiCad", "STM32", "FOC", "LTspice", "Bench PSU / DSO"],
-    role: "Sole designer: schematic, PCB layout, firmware",
-    summary:
-      "A 4-layer motor controller board built around a field-oriented control (FOC) loop, capable of driving a 6.5 kW BLDC hub motor and recovering energy under braking back into the battery pack.",
-    highlights: [
-      "Designed a 4-layer PCB with a dedicated gate-drive layer to minimize switching-loop inductance on the three half-bridges",
-      "Implemented FOC (Clarke/Park transforms + current PI loops) on an STM32G4 running at 20 kHz control bandwidth",
-      "Tuned regenerative braking to recover roughly 18% of kinetic energy on downhill test runs",
-      "Validated switching behavior and dead-time on a 4-channel scope; iterated gate resistor values to cut ringing by half",
-    ],
-    specs: [
-      { label: "Bus voltage", value: "36–58 V" },
-      { label: "Peak current", value: "60 A" },
-      { label: "Control loop", value: "20 kHz FOC" },
-      { label: "MCU", value: "STM32G431" },
-    ],
-    links: [
-      { label: "GitHub", href: "#" },
-      { label: "Design report (PDF)", href: "#" },
-    ],
-    coverGradient: ["#22d3ee", "#0ea5e9"],
-    isExample: true,
-  },
-  {
-    slug: "fpga-audio-dsp",
-    title: "FPGA Real-Time Audio Equalizer",
-    tagline: "5-band parametric EQ implemented entirely in fabric on an Artix-7",
-    category: "Digital Design / DSP",
-    featured: true,
-    year: "2024",
-    tools: ["Verilog", "Vivado", "MATLAB", "I2S", "Artix-7"],
-    role: "Sole designer: RTL, verification, board bring-up",
-    summary:
-      "A fully pipelined, fixed-point 5-band parametric equalizer running in real time on FPGA fabric, with live parameter control over SPI from a companion microcontroller.",
-    highlights: [
-      "Derived biquad filter coefficients in MATLAB and implemented direct-form-II-transposed filters in Verilog",
-      "Built an I2S receiver/transmitter and sample-rate-synchronous pipeline to keep audio latency under 1 ms",
-      "Wrote a self-checking testbench comparing RTL output against a MATLAB fixed-point reference model bit-for-bit",
-      "Closed timing at 100 MHz system clock with room to spare after two rounds of pipeline retiming",
-    ],
-    specs: [
-      { label: "Bands", value: "5, parametric" },
-      { label: "Sample rate", value: "48 kHz / 24-bit" },
-      { label: "Latency", value: "<1 ms" },
-      { label: "FPGA", value: "Xilinx Artix-7" },
-    ],
-    links: [
-      { label: "GitHub", href: "#" },
-      { label: "Demo video", href: "#" },
-    ],
-    coverGradient: ["#f5a524", "#f97316"],
-    isExample: true,
-  },
   {
     slug: "magnetic-chess-set",
     title: "Magnetic 3D-Printed Chess Set",
@@ -230,29 +169,54 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "line-following-robot",
-    title: "PID-Tuned Autonomous Line-Follower",
-    tagline: "Sub-3-second-lap competition robot with a custom sensor bar",
+    slug: "defense-turret",
+    title: "Autonomous Defense Turret",
+    tagline: "A camera-aimed turret that acquires and tracks targets with a two-axis PID gimbal",
     category: "Controls / Robotics",
-    featured: false,
-    year: "2023",
-    tools: ["Arduino", "PID", "KiCad", "SolidWorks"],
-    role: "Sole designer: electronics, mechanical, controls",
+    featured: true,
+    year: "2026",
+    tools: ["Python", "OpenCV", "PID Control", "Servo Motors", "Ultrasonic Sensor", "ESP32-CAM"],
+    role: "Sole designer: computer vision, controls, electronics",
     summary:
-      "A competition line-following robot built around a custom 8-channel IR sensor bar and a tuned PID controller driving differential DC motors, refined over several design/test iterations.",
+      "An all-in-one turret project combining computer vision, closed-loop PID control, and distance sensing on a two-axis (pan and tilt) servo gimbal. The plan is to detect and center a target in frame using multiple detection modes (motion tracking, color masking, and YOLO object detection), range it with an ultrasonic sensor, and eventually fire a NERF launcher with a trajectory calculated from the tilt angle (via an accelerometer/gyroscope module) and the measured distance. This is being built and documented one subsystem at a time.",
     highlights: [
-      "Designed a custom IR reflectance sensor array PCB with onboard analog front-end conditioning",
-      "Tuned a PID controller in real time via serial telemetry, cutting lap time from 6.1 s to 2.8 s",
-      "3D-printed and iterated the chassis in SolidWorks to lower the center of mass for higher-speed cornering",
+      "Writing and testing the vision algorithms (motion tracking, color masking, YOLO) in Python/OpenCV against a laptop webcam before moving them onto the turret's onboard camera",
+      "Currently working through a resolution/latency tradeoff on the ESP32-CAM module, whose wireless video transmission has enough delay to hurt live tracking at higher quality settings",
     ],
     specs: [
-      { label: "Best lap time", value: "2.8 s" },
-      { label: "Sensor channels", value: "8x IR" },
-      { label: "Control", value: "PID @ 1 kHz" },
+      { label: "Degrees of freedom", value: "2 (pan + tilt)" },
+      { label: "Detection modes (planned)", value: "Motion, color mask, YOLO" },
+      { label: "Ranging", value: "Ultrasonic" },
+      { label: "Planned launcher", value: "NERF, trajectory-calculated" },
     ],
-    links: [{ label: "GitHub", href: "#" }],
-    coverGradient: ["#a78bfa", "#818cf8"],
-    isExample: true,
+    coverGradient: ["#f87171", "#7f1d1d"],
+    coverImage: {
+      src: "/projects/defense-turret/ultrasonic-distance-cover.jpeg",
+      alt: "Ultrasonic distance sensor wired to a breadboard with an OLED reading the measured distance",
+    },
+    inProgress: true,
+    buildLog: [
+      {
+        date: "May 12, 2026",
+        title: "Ultrasonic distance sensing test",
+        description:
+          "Wired an HC-SR04 ultrasonic sensor to a breadboard with a 0.96\" OLED display showing live distance in centimeters, tested by moving an obstruction toward and away from the sensor.",
+        video: {
+          src: "/projects/defense-turret/ultrasonic-distance-test.mp4",
+          caption: "Ultrasonic distance test",
+        },
+      },
+      {
+        date: "May 13, 2026",
+        title: "Servo-driven survey mode sweep",
+        description:
+          "Mounted the ultrasonic sensor on a servo set to rotate in increments across its 180-degree range, stopping and reversing direction at each end. The OLED displays the distance to whatever is in front of the sensor in centimeters, and turns off past a roughly 30 cm threshold to filter out background clutter. In this test, the sweep picked up a water bottle sitting on the table as it panned across it.",
+        video: {
+          src: "/projects/defense-turret/survey-mode-test.mp4",
+          caption: "Survey mode sweep test",
+        },
+      },
+    ],
   },
   {
     slug: "555-timer-led-pcbs",
@@ -347,31 +311,6 @@ export const projects: Project[] = [
         ],
       },
     ],
-  },
-  {
-    slug: "rf-antenna-frontend",
-    title: "2.4 GHz Patch Antenna & RF Front-End",
-    tagline: "Custom microstrip patch antenna matched and validated on a VNA",
-    category: "RF / Microwave",
-    featured: false,
-    year: "2022",
-    tools: ["Altium", "HFSS", "VNA", "Smith chart matching"],
-    role: "Sole designer",
-    summary:
-      "A microstrip patch antenna and matching network designed for 2.4 GHz ISM-band operation, simulated electromagnetically before fabrication and validated with VNA measurements.",
-    highlights: [
-      "Simulated radiation pattern and return loss in HFSS, iterating patch dimensions for a target -15 dB S11",
-      "Designed an L-section matching network from Smith chart analysis to correct measured impedance",
-      "Measured S11 and gain on a VNA and antenna range, within 1 dB of simulated results",
-    ],
-    specs: [
-      { label: "Frequency", value: "2.4 GHz ISM" },
-      { label: "Measured S11", value: "-14.6 dB" },
-      { label: "Substrate", value: "FR4, 1.6 mm" },
-    ],
-    links: [{ label: "GitHub", href: "#" }],
-    coverGradient: ["#fb7185", "#f43f5e"],
-    isExample: true,
   },
   {
     slug: "tic-tac-toe-game",
