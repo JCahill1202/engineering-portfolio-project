@@ -208,8 +208,8 @@ export const projects: Project[] = [
     ],
     coverGradient: ["#38bdf8", "#0f172a"],
     coverImage: {
-      src: "/projects/weather-display/weather-display-shell.jpeg",
-      alt: "Finished 3D-printed enclosure for the WiFi weather display",
+      src: "/projects/weather-display/weather-display-test.jpeg",
+      alt: "Breadboard test of the ESP32 and OLED showing live weather data for Boston",
     },
     gallery: [
       {
@@ -400,8 +400,8 @@ export const projects: Project[] = [
     ],
     coverGradient: ["#22d3ee", "#818cf8"],
     coverImage: {
-      src: "/projects/tic-tac-toe/toggle-proto-1.jpeg",
-      alt: "First breadboard prototype of the tic-tac-toe game using toggle switches and RGB LEDs",
+      src: "/projects/tic-tac-toe/3d-printed-shell.jpeg",
+      alt: "3D-printed shell with white PLA diffusing plates over the 3x3 LED grid",
     },
     inProgress: true,
     buildLog: [
