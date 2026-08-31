@@ -6,24 +6,24 @@ export function About() {
   return (
     <section id="about" className="relative border-t border-border py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeading kicker="About" title="Physics fundamentals, EE hands-on" />
+        <SectionHeading kicker="About" title="Background" />
         <div className="grid gap-10 md:grid-cols-5">
           <Reveal delay={0.1} className="md:col-span-3">
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
-                I&apos;m a physics major at {site.school}, based in {site.location}, picking up a minor in
-                electrical engineering. Physics gives me the theory; most of what I know about circuits,
-                firmware, and actually getting hardware to work comes from projects I&apos;ve built on my own
-                time.
+                Through my education at {site.school}, within the College of Science, I have accumulated a
+                baseline knowledge of electronics alongside my Physics background. I have completed several
+                courses of laboratory work including electronics and most recently, Northeastern&apos;s PHYS
+                3600 Advanced Physics Lab, covering topics from spectroscopy and emissions to the Hall effect
+                in semiconductors.
               </p>
               <p>
-                I&apos;ve also spent time in {site.school}&apos;s electronics and advanced physics labs, and
-                worked as a physics lab instructor and as an optical engineering intern. Different flavors of
-                the same instinct: measure carefully, understand why something doesn&apos;t work, and fix it.
+                I brainstorm, research and develop personal engineering projects in my free time to learn and
+                improve my skills while working on things I am passionate about.
               </p>
               <p>
-                I&apos;m looking for internships where I can keep building that hands-on engineering skill set.
-                Reach out if that overlaps with what your team is doing.
+                I&apos;m searching for positions where I can keep building my hands-on engineering skill set.
+                Please reach out if that aligns with your team&apos;s needs.
               </p>
             </div>
           </Reveal>
