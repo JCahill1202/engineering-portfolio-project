@@ -125,6 +125,24 @@ export const projects: Project[] = [
         ],
       },
       {
+        date: "March 23, 2026",
+        title: "Designed the 3D-printed shell in CAD",
+        description:
+          "Modeled the shell's two main parts: a base and a 3x3 grid piece with square diffusing-plate cavities, designed the day before it was printed.",
+        images: [
+          {
+            src: "/projects/tic-tac-toe/base-shell-model.png",
+            alt: "CAD model of the tic-tac-toe shell's base piece",
+            caption: "Base shell model",
+          },
+          {
+            src: "/projects/tic-tac-toe/grid-shell-model.png",
+            alt: "CAD model of the tic-tac-toe shell's 3x3 grid piece",
+            caption: "Grid shell model",
+          },
+        ],
+      },
+      {
         date: "March 24, 2026",
         title: "Custom 3D-printed shell and diffusing plates",
         description:
@@ -146,7 +164,7 @@ export const projects: Project[] = [
     category: "Controls / Robotics",
     featured: true,
     year: "2026",
-    tools: ["Python", "OpenCV", "PID Control", "Servo Motors", "Ultrasonic Sensor", "ESP32-CAM"],
+    tools: ["Python", "OpenCV", "PID Control", "Servo Motors", "Ultrasonic Sensor", "ESP32-CAM", "SolidWorks"],
     role: "Sole designer: computer vision, controls, electronics",
     summary:
       "An all-in-one turret project combining computer vision, closed-loop PID control, and distance sensing on a two-axis (pan and tilt) servo gimbal. The plan is to detect and center a target in frame using multiple detection modes (motion tracking, color masking, and YOLO object detection), range it with an ultrasonic sensor, and eventually fire a NERF launcher with a trajectory calculated from the tilt angle (via an accelerometer/gyroscope module) and the measured distance. This is being built and documented one subsystem at a time.",
@@ -186,6 +204,34 @@ export const projects: Project[] = [
           src: "/projects/defense-turret/survey-mode-test.mp4",
           caption: "Survey mode sweep test",
         },
+      },
+      {
+        date: "May 2026",
+        title: "Mechanical design for the rotating base",
+        description:
+          "Designed the mechanical parts for the turret's pan axis in CAD: a base built around a Lazy Susan bearing for smooth rotation, a custom servo horn and housing to drive it, and a second iteration of the turret base plate with a mounting bracket.",
+        images: [
+          {
+            src: "/projects/defense-turret/lazy-susan-bearing-base.png",
+            alt: "CAD model of a turret base built around a Lazy Susan bearing",
+            caption: "Lazy Susan bearing base",
+          },
+          {
+            src: "/projects/defense-turret/servo-horn.png",
+            alt: "CAD model of a custom servo horn",
+            caption: "Servo horn",
+          },
+          {
+            src: "/projects/defense-turret/servo-housing.png",
+            alt: "CAD model of a servo housing bracket",
+            caption: "Servo housing",
+          },
+          {
+            src: "/projects/defense-turret/turret-base-2.png",
+            alt: "CAD model of the second iteration of the turret base plate",
+            caption: "Turret base, v2",
+          },
+        ],
       },
     ],
   },
