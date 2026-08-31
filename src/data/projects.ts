@@ -400,6 +400,74 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    slug: "misc-3d-models",
+    title: "3D Model Collection",
+    tagline: "An assortment of standalone, practical parts modeled and designed independently",
+    category: "3D Design & Fabrication",
+    featured: true,
+    year: "2026",
+    tools: ["SolidWorks"],
+    role: "Sole designer: CAD modeling",
+    summary:
+      "A collection of smaller, self-contained 3D models, each solving its own practical problem (charging, organizing, mounting) rather than being part of one larger build. Simpler designs were left out in favor of the ones below.",
+    highlights: [
+      "Designed as independent, one-off parts rather than components of a single system, each exploring a different mounting, organizing, or holding mechanism",
+      "Ranges from consumer accessory concepts (AirPods and MagSafe chargers, a Wii Remote charging dock) to household organizers (utensils, toothbrushes, sponges) and mounting hardware",
+    ],
+    coverGradient: ["#94a3b8", "#334155"],
+    coverImage: {
+      src: "/projects/misc-3d-models/wii-remote-holder.png",
+      alt: "SolidWorks model of a 4-slot Wii Remote charging dock",
+    },
+    gallery: [
+      {
+        src: "/projects/misc-3d-models/wii-remote-holder.png",
+        alt: "SolidWorks model of a 4-slot Wii Remote charging dock",
+        caption: "Wii Remote Charging Dock",
+      },
+      {
+        src: "/projects/misc-3d-models/airpods-dock.png",
+        alt: "SolidWorks model of an AirPods charging dock",
+        caption: "AirPods Charging Dock",
+      },
+      {
+        src: "/projects/misc-3d-models/magsafe-platform.png",
+        alt: "SolidWorks model of a MagSafe charging platform",
+        caption: "MagSafe Charging Platform",
+      },
+      {
+        src: "/projects/misc-3d-models/tv-remote-holder.png",
+        alt: "SolidWorks model of a TV remote holder",
+        caption: "TV Remote Holder",
+      },
+      {
+        src: "/projects/misc-3d-models/utensil-stand.png",
+        alt: "SolidWorks model of a utensil stand",
+        caption: "Utensil Stand",
+      },
+      {
+        src: "/projects/misc-3d-models/toothbrush-organizer.png",
+        alt: "SolidWorks model of a toothbrush organizer",
+        caption: "Toothbrush Organizer",
+      },
+      {
+        src: "/projects/misc-3d-models/sponge-organizer.png",
+        alt: "SolidWorks model of a sponge organizer",
+        caption: "Sponge Organizer",
+      },
+      {
+        src: "/projects/misc-3d-models/soap-pedestal.png",
+        alt: "SolidWorks model of a soap bar pedestal",
+        caption: "Soap Bar Pedestal",
+      },
+      {
+        src: "/projects/misc-3d-models/wall-mount-can-holder.png",
+        alt: "SolidWorks model of a wall-mount can holder",
+        caption: "Wall-Mount Can Holder",
+      },
+    ],
+  },
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured);
