@@ -3,7 +3,7 @@ export const site = {
   name: "Jack Cahill",
   role: "Physics Major · Electrical Engineering Minor",
   tagline:
-    "I'm a physics major picking up an EE minor, and most of what I know about circuits and firmware comes from building things on my own, not classwork alone. I like taking a project from a schematic to a working prototype on the bench.",
+    "I'm a physics major with a passion for electronics who likes to dabble in programming. When I start a project I'll learn all the skills necessary to take it from an idea to a polished and tested final product.",
   location: "Boston, MA",
   school: "Northeastern University",
   degree: "B.S. Physics, Minor in EE & Math (in progress)",

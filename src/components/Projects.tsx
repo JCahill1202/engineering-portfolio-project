@@ -9,7 +9,7 @@ export function Projects() {
         <SectionHeading
           kicker="Selected Work"
           title="Projects"
-          description="A mix of electronics, embedded systems, controls, and 3D design, each one built, tested, and documented end to end."
+          description="A mix of electronics, embedded systems, controls and 3D design."
         />
         {projects.some((p) => p.isExample) && (
           <div className="mb-10 rounded-xl border border-accent-2/30 bg-accent-2/5 px-5 py-3 text-sm text-accent-2">
