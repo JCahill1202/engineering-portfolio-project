@@ -417,7 +417,7 @@ export const projects: Project[] = [
     ],
     coverGradient: ["#94a3b8", "#334155"],
     coverImage: {
-      src: "/projects/misc-3d-models/wii-remote-holder.png",
+      src: "/projects/misc-3d-models/wii-remote-holder-cover.png",
       alt: "SolidWorks model of a 4-slot Wii Remote charging dock",
     },
     gallery: [
