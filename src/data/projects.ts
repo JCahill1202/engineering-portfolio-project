@@ -180,8 +180,8 @@ export const projects: Project[] = [
     ],
     coverGradient: ["#f87171", "#7f1d1d"],
     coverImage: {
-      src: "/projects/defense-turret/ultrasonic-distance-cover.jpeg",
-      alt: "Ultrasonic distance sensor wired to a breadboard with an OLED reading the measured distance",
+      src: "/projects/defense-turret/lazy-susan-bearing-cover.png",
+      alt: "CAD model of a turret base built around a Lazy Susan bearing",
     },
     inProgress: true,
     buildLog: [
