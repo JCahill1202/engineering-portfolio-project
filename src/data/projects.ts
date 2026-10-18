@@ -65,8 +65,11 @@ export const projects: Project[] = [
       "Breadboard",
       "Soldering",
       "Arduino",
+      "ESP32",
       "Joystick module",
       "WS2812B LEDs",
+      "OLED Display",
+      "Logic Level Shifter",
       "SolidWorks/FreeCAD",
       "3D Printing",
     ],
@@ -183,6 +186,43 @@ export const projects: Project[] = [
           {
             src: "/projects/tic-tac-toe/draw-animation.mp4",
             caption: "Draw animation",
+          },
+        ],
+      },
+      {
+        date: "May 22, 2026",
+        title: "Hit a major flickering bug while adding the OLED",
+        description:
+          "While trying to add the OLED display, LEDs at the end of the strip started flickering red, green, and blue on their own, suggesting the data line was acting like an antenna and picking up noise. Spent a long time revising the program trying to track it down, with the OLED's I2C communication seeming like the likely source. This turned out to be the project's biggest obstacle by far, and the reason for a long break before coming back to it.",
+        videos: [
+          {
+            src: "/projects/tic-tac-toe/flickering-bug.mp4",
+            caption: "Flickering bug",
+          },
+        ],
+      },
+      {
+        date: "May 24, 2026",
+        title: "Original color selection screen",
+        description:
+          "Before the game starts, 9 different colors would light up across the grid and the two players would take turns selecting one to play with. The pulsing selection cursor was hard to see against the solid colors and the whole screen wasn't visually appealing, so this approach was later replaced.",
+        videos: [
+          {
+            src: "/projects/tic-tac-toe/original-color-selection.mp4",
+            caption: "Original color selection",
+          },
+        ],
+      },
+      {
+        date: "October 14, 2026",
+        title: "Fixed the flickering: shorter data line and a level shifter",
+        description:
+          "Came back to the project after the long break, reassembled the circuitry, and significantly shortened the LED data line to cut down on noise pickup. Added a logic level shifter to bring the 3.3 V control signal up to 5 V, and worked out the RC time constant for that conversion to confirm the shifted signal would still switch fast enough for the LED timing.",
+        images: [
+          {
+            src: "/projects/tic-tac-toe/reassembled-setup.jpeg",
+            alt: "Reassembled tic-tac-toe circuit with a shortened LED data line and a level shifter",
+            caption: "Reassembled setup with level shifter",
           },
         ],
       },
