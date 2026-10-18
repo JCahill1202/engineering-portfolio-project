@@ -238,6 +238,24 @@ export const projects: Project[] = [
           },
         ],
       },
+      {
+        date: "October 15, 2026",
+        title: "Mode and difficulty menus",
+        description:
+          "Added joystick-controlled OLED menus ahead of color selection: a mode menu to choose 1 Player or 2 Player, and, if 1 Player is selected, a difficulty menu to choose the CPU's level (Easy, Medium, or Hard).",
+        images: [
+          {
+            src: "/projects/tic-tac-toe/mode-menu.jpeg",
+            alt: "OLED menu reading Mode: 1 Player, 2 Player",
+            caption: "Mode menu",
+          },
+          {
+            src: "/projects/tic-tac-toe/difficulty-menu.jpeg",
+            alt: "OLED menu reading Level: Easy, Medium, Hard",
+            caption: "Difficulty menu",
+          },
+        ],
+      },
     ],
   },
   {
