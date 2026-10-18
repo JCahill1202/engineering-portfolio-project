@@ -256,6 +256,18 @@ export const projects: Project[] = [
           },
         ],
       },
+      {
+        date: "October 15, 2026",
+        title: "CPU opponent with three difficulty levels",
+        description:
+          "Wrote the CPU's move logic as a priority check: look for any move that wins immediately, then any move that blocks the opponent from winning, then take the center if it's open, then a corner, then any open square. Easy mode ignores this and places randomly. Medium mode follows it but occasionally makes a mistake. Hard mode follows it perfectly, playing an unbeatable game where the best a human opponent can do is tie.",
+        videos: [
+          {
+            src: "/projects/tic-tac-toe/cpu-test-game.mp4",
+            caption: "CPU opponent test",
+          },
+        ],
+      },
     ],
   },
   {
