@@ -226,6 +226,18 @@ export const projects: Project[] = [
           },
         ],
       },
+      {
+        date: "October 15, 2026",
+        title: "Redesigned color selection: 7 colors, scroll wheel layout",
+        description:
+          "Cut the color count from 9 down to 7, dropping green/lime and pink/purple since each pair looked too similar to tell apart. Replaced the cluttered 9-at-once screen with a scroll wheel layout: the currently highlighted color sits in the middle of the board, with the next and previous options previewed on either side. The OLED shows \"Player 1 Color: ___\", filling in the blank with whatever color is highlighted, then switches to Player 2 once Player 1 has picked, before the game begins as normal.",
+        videos: [
+          {
+            src: "/projects/tic-tac-toe/color-scroll-wheel.mp4",
+            caption: "Color scroll wheel selection",
+          },
+        ],
+      },
     ],
   },
   {
