@@ -261,14 +261,21 @@ export default async function ProjectPage({
                     <h3 className="font-display mt-1 text-lg font-semibold">{entry.title}</h3>
                     <p className="mt-2 max-w-2xl text-muted leading-relaxed">{entry.description}</p>
 
-                    {entry.video && (
-                      <div className="mt-5 w-full max-w-[220px] overflow-hidden rounded-2xl border border-border bg-bg-raised">
-                        <video src={entry.video.src} autoPlay loop muted playsInline className="w-full" />
-                        {entry.video.caption && (
-                          <p className="font-mono-label border-t border-border px-4 py-2.5 text-xs uppercase text-muted">
-                            {entry.video.caption}
-                          </p>
-                        )}
+                    {entry.videos && entry.videos.length > 0 && (
+                      <div className="mt-5 flex flex-wrap gap-4">
+                        {entry.videos.map((vid) => (
+                          <div
+                            key={vid.src}
+                            className="w-full max-w-[220px] overflow-hidden rounded-2xl border border-border bg-bg-raised"
+                          >
+                            <video src={vid.src} autoPlay loop muted playsInline className="w-full" />
+                            {vid.caption && (
+                              <p className="font-mono-label border-t border-border px-4 py-2.5 text-xs uppercase text-muted">
+                                {vid.caption}
+                              </p>
+                            )}
+                          </div>
+                        ))}
                       </div>
                     )}
 

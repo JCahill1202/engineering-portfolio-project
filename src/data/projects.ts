@@ -16,7 +16,8 @@ export type BuildLogEntry = {
   title: string;
   description: string;
   images?: ProjectImage[];
-  video?: ProjectVideo;
+  // One or more short, muted, looping demo clips, shown side by side.
+  videos?: ProjectVideo[];
 };
 
 export type Project = {
@@ -106,10 +107,12 @@ export const projects: Project[] = [
         title: "Switched to an Arduino and joystick for analog control",
         description:
           "Moved off manual toggle switches to an Arduino microcontroller, adding a joystick for analog control over the LEDs. Wrote a program that tracks the LEDs in an array, follows which one the joystick is hovering over, and lights it up on joystick button press.",
-        video: {
-          src: "/projects/tic-tac-toe/joystick-test.mp4",
-          caption: "Joystick-controlled LED test",
-        },
+        videos: [
+          {
+            src: "/projects/tic-tac-toe/joystick-test.mp4",
+            caption: "Joystick-controlled LED test",
+          },
+        ],
       },
       {
         date: "March 17, 2026",
@@ -155,6 +158,34 @@ export const projects: Project[] = [
           },
         ],
       },
+      {
+        date: "May 19, 2026",
+        title: "First playable game version, and an Arduino RAM wall",
+        description:
+          "Got the first full playable version running: joystick input, the LED grid, and a restart button, all on an Arduino. Ran into the Uno's 2 KB of RAM almost immediately, and trying to add an OLED display on top of the game logic exceeded it.",
+        videos: [
+          {
+            src: "/projects/tic-tac-toe/first-version-game.mp4",
+            caption: "First playable version",
+          },
+        ],
+      },
+      {
+        date: "May 21, 2026",
+        title: "Win and draw end-game animations",
+        description:
+          "Added end-game animations: a win pulses the winning permutation in the winner's color, and a draw flashes the whole grid yellow before clearing the board in a snaking reset animation of white lights.",
+        videos: [
+          {
+            src: "/projects/tic-tac-toe/win-animation.mp4",
+            caption: "Win animation",
+          },
+          {
+            src: "/projects/tic-tac-toe/draw-animation.mp4",
+            caption: "Draw animation",
+          },
+        ],
+      },
     ],
   },
   {
@@ -190,20 +221,24 @@ export const projects: Project[] = [
         title: "Ultrasonic distance sensing test",
         description:
           "Wired an HC-SR04 ultrasonic sensor to a breadboard with a 0.96\" OLED display showing live distance in centimeters, tested by moving an obstruction toward and away from the sensor.",
-        video: {
-          src: "/projects/defense-turret/ultrasonic-distance-test.mp4",
-          caption: "Ultrasonic distance test",
-        },
+        videos: [
+          {
+            src: "/projects/defense-turret/ultrasonic-distance-test.mp4",
+            caption: "Ultrasonic distance test",
+          },
+        ],
       },
       {
         date: "May 13, 2026",
         title: "Servo-driven survey mode sweep",
         description:
           "Mounted the ultrasonic sensor on a servo set to rotate in increments across its 180-degree range, stopping and reversing direction at each end. The OLED displays the distance to whatever is in front of the sensor in centimeters, and turns off past a roughly 30 cm threshold to filter out background clutter. In this test, the sweep picked up a water bottle sitting on the table as it panned across it.",
-        video: {
-          src: "/projects/defense-turret/survey-mode-test.mp4",
-          caption: "Survey mode sweep test",
-        },
+        videos: [
+          {
+            src: "/projects/defense-turret/survey-mode-test.mp4",
+            caption: "Survey mode sweep test",
+          },
+        ],
       },
       {
         date: "May 2026",

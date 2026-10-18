@@ -39,6 +39,9 @@ yarn-error.log*
 # claude code harness state
 .claude/
 
+# raw source media dropped in the repo root for processing (not meant to be committed)
+/Tic Tac Toe Testing Videos/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
