@@ -268,6 +268,19 @@ export const projects: Project[] = [
           },
         ],
       },
+      {
+        date: "October 20, 2026",
+        title: "KiCad schematic",
+        description:
+          "Designed a full schematic for the circuit: the ESP32 DevKit, OLED screen, joystick, buzzer, pushbuttons, and the level shifter with its RC network, all tied together in KiCad.",
+        images: [
+          {
+            src: "/projects/tic-tac-toe/pcb-schematic.png",
+            alt: "KiCad schematic of the ESP32, OLED, joystick, buzzer, and level shifter circuit",
+            caption: "KiCad schematic",
+          },
+        ],
+      },
     ],
   },
   {
