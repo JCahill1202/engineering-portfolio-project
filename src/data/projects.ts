@@ -281,6 +281,24 @@ export const projects: Project[] = [
           },
         ],
       },
+      {
+        date: "October 27, 2026",
+        title: "PCB layout and 3D preview",
+        description:
+          "Laid out a PCB from the schematic, routing the ESP32, OLED, joystick, buzzer, pushbuttons, LED data line, and level shifter onto a single board, and rendered a 3D preview of the finished design in KiCad.",
+        images: [
+          {
+            src: "/projects/tic-tac-toe/pcb-layout.png",
+            alt: "KiCad PCB layout for the tic-tac-toe circuit board",
+            caption: "PCB layout",
+          },
+          {
+            src: "/projects/tic-tac-toe/pcb-3d-preview.png",
+            alt: "3D render of the tic-tac-toe PCB",
+            caption: "3D board preview",
+          },
+        ],
+      },
     ],
   },
   {
