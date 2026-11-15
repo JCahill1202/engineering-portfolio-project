@@ -82,8 +82,8 @@ export const projects: Project[] = [
     ],
     coverGradient: ["#22d3ee", "#818cf8"],
     coverImage: {
-      src: "/projects/tic-tac-toe/3d-printed-shell.jpeg",
-      alt: "3D-printed shell with white PLA diffusing plates over the 3x3 LED grid",
+      src: "/projects/tic-tac-toe/pcb-in-housing.jpeg",
+      alt: "Finished tic-tac-toe PCB mounted inside its 3D-printed housing, running a game",
     },
     inProgress: true,
     buildLog: [
