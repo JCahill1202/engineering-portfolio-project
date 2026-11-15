@@ -299,6 +299,50 @@ export const projects: Project[] = [
           },
         ],
       },
+      {
+        date: "November 11, 2026",
+        title: "Bare PCBs back from fab",
+        description:
+          "Received the manufactured boards and checked the top and bottom copper against the layout before starting to populate any components.",
+        images: [
+          {
+            src: "/projects/tic-tac-toe/pcb-top.jpeg",
+            alt: "Top side of the bare manufactured tic-tac-toe PCB",
+            caption: "PCB top",
+          },
+          {
+            src: "/projects/tic-tac-toe/pcb-bottom.jpeg",
+            alt: "Bottom side of the bare manufactured tic-tac-toe PCB",
+            caption: "PCB bottom",
+          },
+        ],
+      },
+      {
+        date: "November 13, 2026",
+        title: "Soldered board",
+        description:
+          "Populated and soldered the board: ESP32, OLED, joystick, pushbuttons, level shifter, and the LED grid all wired in and running on real hardware for the first time.",
+        images: [
+          {
+            src: "/projects/tic-tac-toe/pcb-soldered.jpeg",
+            alt: "Fully soldered tic-tac-toe PCB running on the bench",
+            caption: "Soldered board",
+          },
+        ],
+      },
+      {
+        date: "November 14, 2026",
+        title: "Board mounted in housing",
+        description:
+          "Mounted the finished board back inside the 3D-printed housing with the OLED, joystick, and LED grid all lined up, running a full game against the CPU opponent.",
+        images: [
+          {
+            src: "/projects/tic-tac-toe/pcb-in-housing.jpeg",
+            alt: "Soldered tic-tac-toe PCB mounted inside its 3D-printed housing",
+            caption: "Board in housing",
+          },
+        ],
+      },
     ],
   },
   {

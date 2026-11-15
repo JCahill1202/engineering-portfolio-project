@@ -42,6 +42,8 @@ yarn-error.log*
 # raw source media dropped in the repo root for processing (not meant to be committed)
 /Tic Tac Toe Testing Videos/
 /TTT KiCad/
+/PCB Pics/
+/PCB Pics.zip
 
 # typescript
 *.tsbuildinfo
