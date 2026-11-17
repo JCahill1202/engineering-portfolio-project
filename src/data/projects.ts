@@ -82,8 +82,8 @@ export const projects: Project[] = [
     ],
     coverGradient: ["#22d3ee", "#818cf8"],
     coverImage: {
-      src: "/projects/tic-tac-toe/pcb-in-housing.jpeg",
-      alt: "Finished tic-tac-toe PCB mounted inside its 3D-printed housing, running a game",
+      src: "/projects/tic-tac-toe/finished-prototype.jpeg",
+      alt: "Finished tic-tac-toe prototype in its labeled 3D-printed housing",
     },
     inProgress: true,
     buildLog: [
@@ -340,6 +340,19 @@ export const projects: Project[] = [
             src: "/projects/tic-tac-toe/pcb-in-housing.jpeg",
             alt: "Soldered tic-tac-toe PCB mounted inside its 3D-printed housing",
             caption: "Board in housing",
+          },
+        ],
+      },
+      {
+        date: "November 16, 2026",
+        title: "Finished prototype",
+        description:
+          "Finished the housing, with a labeled front panel, X and O markers, and cutouts for the OLED, joystick, pushbuttons, and LED grid.",
+        images: [
+          {
+            src: "/projects/tic-tac-toe/finished-prototype.jpeg",
+            alt: "Finished tic-tac-toe prototype in its labeled 3D-printed housing",
+            caption: "Finished prototype",
           },
         ],
       },
