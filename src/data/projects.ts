@@ -20,6 +20,10 @@ export type BuildLogEntry = {
   videos?: ProjectVideo[];
 };
 
+// A distinct software mode/feature within a project, briefly described (e.g. the turret's
+// separate motion-tracking, color-masking, and object-recognition vision modes).
+export type ProjectMode = { title: string; description: string };
+
 export type Project = {
   slug: string;
   title: string;
@@ -31,6 +35,7 @@ export type Project = {
   role: string;
   summary: string;
   highlights: string[];
+  modes?: ProjectMode[];
   specs?: { label: string; value: string }[];
   links?: { label: string; href: string }[];
   coverGradient: [string, string];
@@ -85,7 +90,6 @@ export const projects: Project[] = [
       src: "/projects/tic-tac-toe/finished-prototype.jpeg",
       alt: "Finished tic-tac-toe prototype in its labeled 3D-printed housing",
     },
-    inProgress: true,
     buildLog: [
       {
         date: "December 3, 2025",
@@ -372,6 +376,23 @@ export const projects: Project[] = [
     highlights: [
       "Writing and testing the vision algorithms (motion tracking, color masking, YOLO) in Python/OpenCV against a laptop webcam before moving them onto the turret's onboard camera",
       "Currently working through a resolution/latency tradeoff on the ESP32-CAM module, whose wireless video transmission has enough delay to hurt live tracking at higher quality settings",
+    ],
+    modes: [
+      {
+        title: "Motion tracking",
+        description:
+          "Diffs consecutive grayscale frames and thresholds the result to find movement, then tracks the centroid of the thresholded region using image moments.",
+      },
+      {
+        title: "Color masking",
+        description:
+          "Thresholds the frame in HSV space against a selectable color range (red, orange, yellow, green, or blue) and tracks the centroid of the resulting mask.",
+      },
+      {
+        title: "Object recognition",
+        description:
+          "Runs a YOLOv8 model (via Ultralytics) on each frame and locks onto the largest detected person in view.",
+      },
     ],
     specs: [
       { label: "Degrees of freedom", value: "2 (pan + tilt)" },

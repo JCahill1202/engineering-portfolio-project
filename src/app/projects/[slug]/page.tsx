@@ -165,6 +165,20 @@ export default async function ProjectPage({
             </Reveal>
           </div>
 
+          {project.modes && project.modes.length > 0 && (
+            <Reveal className="mt-16">
+              <h2 className="font-display text-xl font-semibold">Software Modes</h2>
+              <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                {project.modes.map((m) => (
+                  <div key={m.title} className="rounded-2xl border border-border bg-bg-raised p-5">
+                    <h3 className="font-medium">{m.title}</h3>
+                    <p className="mt-2 text-sm text-muted leading-relaxed">{m.description}</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          )}
+
           {project.variants && project.variants.length > 0 && (
             <div className="mt-16 space-y-14">
               {project.variants.map((variant) => (
